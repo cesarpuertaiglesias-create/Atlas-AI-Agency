@@ -65,6 +65,7 @@ body {
   overflow-x: hidden;
   background-color: var(--bg-base);
   line-height: 1.6;
+  position: relative;
 }
 
 /* Grain estático de fondo para textura premium */
@@ -147,7 +148,13 @@ body::before {
 
 @media (max-width: 768px) {
   .section {
-    padding: 80px 0;
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 50px 16px;
   }
 }
 
@@ -188,9 +195,9 @@ nav.scrolled {
 }
 
 .nav-logo img {
-  height: 38px;
+  height: 44px;
   width: auto;
-  filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.3));
+  filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.4)) drop-shadow(0 0 20px rgba(249, 115, 22, 0.15));
   transition: var(--transition-smooth);
 }
 
@@ -199,13 +206,7 @@ nav.scrolled {
 }
 
 .nav-logo span {
-  font-family: var(--font-headings);
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #FFF 60%, var(--accent-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  display: none;
 }
 
 .nav-links {
@@ -347,7 +348,7 @@ nav.scrolled {
 
 /* ─── SECCIÓN HERO (LUJO Y ESPACIO) ─── */
 .hero {
-  min-height: 100dvh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -355,6 +356,14 @@ nav.scrolled {
   padding-bottom: 60px;
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
 }
 
 .hero-canvas-container {
@@ -395,6 +404,12 @@ nav.scrolled {
   line-height: 1.05;
   letter-spacing: -0.03em;
   margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: clamp(1.8rem, 4.5vw, 2.2rem);
+  }
 }
 
 .hero h1 span.text-gradient {
@@ -440,6 +455,15 @@ nav.scrolled {
   transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
   z-index: 0;
   gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .btn-primary {
+    max-width: 280px;
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 0.9rem;
+  }
 }
 
 .btn-primary::before {
@@ -489,6 +513,15 @@ nav.scrolled {
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .btn-secondary {
+    max-width: 280px;
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 0.9rem;
+  }
+}
+
 .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.06);
   color: var(--text-primary);
@@ -524,6 +557,12 @@ nav.scrolled {
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: clamp(1.5rem, 3.5vw, 1.8rem);
+  }
 }
 
 .section-header h2 span.text-gradient {
@@ -594,6 +633,13 @@ nav.scrolled {
   min-height: 320px;
 }
 
+@media (max-width: 768px) {
+  .bento-card {
+    padding: 24px 20px;
+    min-height: auto;
+  }
+}
+
 .bento-card.wide {
   grid-column: span 8;
 }
@@ -635,6 +681,12 @@ nav.scrolled {
   font-weight: 700;
   margin-bottom: 12px;
   letter-spacing: -0.01em;
+}
+
+@media (max-width: 768px) {
+  .bento-body h3 {
+    font-size: 1.1rem;
+  }
 }
 
 .bento-body p {
@@ -693,6 +745,12 @@ nav.scrolled {
   letter-spacing: -0.01em;
 }
 
+@media (max-width: 768px) {
+  .step-content h3 {
+    font-size: 1.1rem;
+  }
+}
+
 .step-content p {
   color: var(--text-secondary);
   font-size: 0.95rem;
@@ -726,6 +784,12 @@ nav.scrolled {
   text-align: left;
 }
 
+@media (max-width: 768px) {
+  .value-card {
+    padding: 28px 20px;
+  }
+}
+
 .value-metric {
   font-family: var(--font-headings);
   font-size: 3rem;
@@ -738,11 +802,23 @@ nav.scrolled {
   -webkit-text-fill-color: transparent;
 }
 
+@media (max-width: 768px) {
+  .value-metric {
+    font-size: 2.2rem;
+  }
+}
+
 .value-card h3 {
   font-family: var(--font-headings);
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .value-card h3 {
+    font-size: 1.05rem;
+  }
 }
 
 .value-card p {

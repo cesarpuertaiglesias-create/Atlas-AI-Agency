@@ -332,7 +332,116 @@
     }, { passive: true });
   });
 
+  // ─── ENHANCED SCROLL EFFECTS: CARD STAGGER & TILT EFFECT ───
+  const bentoCards = document.querySelectorAll('.bento-card');
+  bentoCards.forEach((card, index) => {
+    // Add staggered animation delay
+    card.style.setProperty('--card-delay', `${index * 120}ms`);
+    
+    // Add tilt effect on mouse move
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      
+      const rotateX = (y - 0.5) * 3;
+      const rotateY = (x - 0.5) * -3;
+      
+      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(800px) rotateX(0) rotateY(0)';
+    });
+  });
+
+  // ─── SERVICE CARDS TILT EFFECT ───
+  const processSteps = document.querySelectorAll('.process-step');
+  processSteps.forEach(step => {
+    step.addEventListener('mousemove', (e) => {
+      const rect = step.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      
+      const rotateX = (y - 0.5) * 2;
+      const rotateY = (x - 0.5) * -2;
+      
+      step.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    
+    step.addEventListener('mouseleave', () => {
+      step.style.transform = 'perspective(600px) rotateX(0) rotateY(0)';
+    });
+  });
+
+  // ─── SECTION TITLES SPLIT WORD REVEAL ON SCROLL ───
+  const sectionHeaders = document.querySelectorAll('.section-header h2');
+  sectionHeaders.forEach(header => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('words-split')) {
+          // Split text into words
+          const text = entry.target.textContent;
+          const words = text.split(' ');
+          entry.target.innerHTML = '';
+          entry.target.classList.add('words-split');
+          
+          words.forEach((word, index) => {
+            const span = document.createElement('span');
+            span.textContent = word + ' ';
+            span.style.display = 'inline-block';
+            span.style.opacity = '0';
+            span.style.animation = `fadeInWord 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards`;
+            span.style.animationDelay = `${index * 80}ms`;
+            entry.target.appendChild(span);
+          });
+          
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    
+    observer.observe(header);
+  });
+
+  // ─── AMBIENT CURSOR GLOW (Subtle background glow) ───
+  let mouseX = 0, mouseY = 0;
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    // Update ambient glow position via CSS variable for global background glow
+    document.documentElement.style.setProperty('--mouse-x-global', `${mouseX}px`);
+    document.documentElement.style.setProperty('--mouse-y-global', `${mouseY}px`);
+  }, { passive: true });
+
 })();
+
+// ─── CSS KEYFRAME ANIMATION FOR SPLIT WORD REVEAL ───
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes fadeInWord {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes carouselScroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+`;
+document.head.appendChild(style);
+
 
 // ─── MENÚ MÓVIL (ABRIR / CERRAR) ───
 function toggleMobileMenu() {

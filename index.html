@@ -84,8 +84,7 @@
   <nav id="main-nav">
     <div class="container nav-container">
       <a href="#" class="nav-logo">
-        <img src="./atlas-ai-logo.webp" alt="Logo de Atlas AI" width="38" height="38">
-        <span>ATLAS AI</span>
+        <img src="./atlas-ai-transparente.png" alt="Logo de Atlas AI" width="44" height="44">
       </a>
       
       <div class="nav-links">
@@ -150,34 +149,66 @@
     <div class="container">
       <div class="logo-wall-inner">
         <p class="logo-wall-title">Sistemas integrados de forma segura con</p>
-        <div class="logo-grid">
-          <div class="logo-item" title="Make">
-            <img src="https://cdn.simpleicons.org/make/ffffff" alt="Logo de Make" width="24" height="24" loading="lazy">
-          </div>
-          <div class="logo-item" title="Google">
-            <img src="https://cdn.simpleicons.org/google/ffffff" alt="Logo de Google" width="24" height="24" loading="lazy">
-          </div>
-          <div class="logo-item" title="Notion">
-            <img src="https://cdn.simpleicons.org/notion/ffffff" alt="Logo de Notion" width="24" height="24" loading="lazy">
-          </div>
-          <div class="logo-item" title="n8n">
-            <img src="https://cdn.simpleicons.org/n8n/ffffff" alt="Logo de n8n" width="24" height="24" loading="lazy">
-          </div>
-          <div class="logo-item" title="Airtable">
-            <img src="https://cdn.simpleicons.org/airtable/ffffff" alt="Logo de Airtable" width="24" height="24" loading="lazy">
-          </div>
-          <div class="logo-item" title="ManyChat">
-            <img src="https://cdn.simpleicons.org/manychat/ffffff" alt="Logo de ManyChat" width="32" height="32">
-          </div>
-          <div class="logo-item" title="Supabase">
-            <img src="https://cdn.simpleicons.org/supabase/ffffff" alt="Logo de Supabase" width="24" height="24" loading="lazy">
+        <div class="logos-carousel">
+          <div class="logos-carousel-track">
+            <!-- Primer set de logos -->
+            <div class="carousel-logo-item" title="Make">
+              <img src="https://cdn.simpleicons.org/make/9B59B6" alt="Logo de Make" height="48" loading="lazy">
+            </div>
+            <div class="carousel-logo-item" title="Google">
+              <img src="https://cdn.simpleicons.org/google/4285F4" alt="Logo de Google" height="48" loading="lazy">
+            </div>
+            <div class="carousel-logo-item" title="Notion">
+              <img src="https://cdn.simpleicons.org/notion/ffffff" alt="Logo de Notion" height="48" loading="lazy">
+            </div>
+            <div class="carousel-logo-item" title="n8n">
+              <img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="Logo de n8n" height="48" loading="lazy">
+            </div>
+            <div class="carousel-logo-item" title="Supabase">
+              <img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Logo de Supabase" height="48" loading="lazy">
+            </div>
+            <div class="carousel-logo-item" title="Vercel">
+              <img src="https://cdn.simpleicons.org/vercel/ffffff" alt="Logo de Vercel" height="48" loading="lazy">
+            </div>
+            <div class="carousel-logo-item" title="Stripe">
+              <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Logo de Stripe" height="48" loading="lazy">
+            </div>
+            <div class="carousel-logo-item" title="OpenAI">
+              <img src="https://cdn.simpleicons.org/openai/ffffff" alt="Logo de OpenAI" height="48" loading="lazy">
+            </div>
+            
+            <!-- Duplicado para crear efecto infinito sin parpadeo -->
+            <div class="carousel-logo-item" title="Make">
+              <img src="https://cdn.simpleicons.org/make/9B59B6" alt="Logo de Make" height="48" loading="lazy">
+            </div>
+            <div class="carousel-logo-item" title="Google">
+              <img src="https://cdn.simpleicons.org/google/4285F4" alt="Logo de Google" height="48" loading="lazy">
+            </div>
+            <div class="carousel-logo-item" title="Notion">
+              <img src="https://cdn.simpleicons.org/notion/ffffff" alt="Logo de Notion" height="48" loading="lazy">
+            </div>
+            <div class="carousel-logo-item" title="n8n">
+              <img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="Logo de n8n" height="48" loading="lazy">
+            </div>
+            <div class="carousel-logo-item" title="Supabase">
+              <img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Logo de Supabase" height="48" loading="lazy">
+            </div>
+            <div class="carousel-logo-item" title="Vercel">
+              <img src="https://cdn.simpleicons.org/vercel/ffffff" alt="Logo de Vercel" height="48" loading="lazy">
+            </div>
+            <div class="carousel-logo-item" title="Stripe">
+              <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Logo de Stripe" height="48" loading="lazy">
+            </div>
+            <div class="carousel-logo-item" title="OpenAI">
+              <img src="https://cdn.simpleicons.org/openai/ffffff" alt="Logo de OpenAI" height="48" loading="lazy">
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Estilos en línea específicos y aislados para el logo-wall para mantener modularidad y evitar sobrecarga global -->
+  <!-- Estilos en línea específicos y aislados para el logo-wall carousel -->
   <style>
     .logo-wall-section {
       padding: 48px 0;
@@ -189,7 +220,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
+      gap: 32px;
     }
     .logo-wall-title {
       font-size: 0.75rem;
@@ -198,31 +229,78 @@
       color: var(--text-dim);
       font-weight: 500;
     }
-    .logo-grid {
+    .logos-carousel {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .logos-carousel::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      background: linear-gradient(to right, rgba(11, 11, 15, 0.8), transparent);
+      z-index: 10;
+      pointer-events: none;
+    }
+    .logos-carousel::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      background: linear-gradient(to left, rgba(11, 11, 15, 0.8), transparent);
+      z-index: 10;
+      pointer-events: none;
+    }
+    .logos-carousel-track {
       display: flex;
-      justify-content: center;
+      gap: 48px;
       align-items: center;
-      gap: 64px;
-      flex-wrap: wrap;
+      padding: 20px 0;
+      animation: carousel-scroll 30s linear infinite;
+      will-change: transform;
     }
-    .logo-item {
-      opacity: 0.45;
-      transition: var(--transition-fast);
+    .logos-carousel:hover .logos-carousel-track {
+      animation-play-state: paused;
+    }
+    @keyframes carousel-scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    .carousel-logo-item {
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
     }
-    .logo-item:hover {
-      opacity: 0.95;
-      transform: scale(1.05);
+    .carousel-logo-item:hover {
+      opacity: 1;
     }
-    .logo-item img {
-      height: 22px;
+    .carousel-logo-item img {
+      height: 48px;
       width: auto;
+      filter: drop-shadow(0 0 4px rgba(249, 115, 22, 0.15));
     }
     @media (max-width: 768px) {
-      .logo-grid {
+      .logos-carousel {
+        width: 100%;
+      }
+      .logos-carousel-track {
         gap: 32px;
+        padding: 16px 0;
+      }
+      .carousel-logo-item img {
+        height: 40px;
       }
     }
   </style>
