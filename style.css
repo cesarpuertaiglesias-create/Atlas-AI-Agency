@@ -201,6 +201,12 @@ nav.scrolled {
   transition: var(--transition-smooth);
 }
 
+@media (max-width: 768px) {
+  .nav-logo img {
+    height: 50px;
+  }
+}
+
 .nav-logo:hover img {
   transform: rotate(5deg) scale(1.05);
 }
@@ -459,10 +465,10 @@ nav.scrolled {
 
 @media (max-width: 768px) {
   .btn-primary {
-    max-width: 280px;
+    max-width: 220px;
     width: 100%;
-    padding: 14px 24px;
-    font-size: 0.9rem;
+    padding: 12px 20px;
+    font-size: 0.85rem;
   }
 }
 

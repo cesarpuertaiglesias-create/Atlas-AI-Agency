@@ -375,34 +375,8 @@
   });
 
   // ─── SECTION TITLES SPLIT WORD REVEAL ON SCROLL ───
-  const sectionHeaders = document.querySelectorAll('.section-header h2');
-  sectionHeaders.forEach(header => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.classList.contains('words-split')) {
-          // Split text into words
-          const text = entry.target.textContent;
-          const words = text.split(' ');
-          entry.target.innerHTML = '';
-          entry.target.classList.add('words-split');
-          
-          words.forEach((word, index) => {
-            const span = document.createElement('span');
-            span.textContent = word + ' ';
-            span.style.display = 'inline-block';
-            span.style.opacity = '0';
-            span.style.animation = `fadeInWord 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards`;
-            span.style.animationDelay = `${index * 80}ms`;
-            entry.target.appendChild(span);
-          });
-          
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    
-    observer.observe(header);
-  });
+  // Disabled - keep section titles as normal text reveal
+  // const sectionHeaders = document.querySelectorAll('.section-header h2');
 
   // ─── AMBIENT CURSOR GLOW (Subtle background glow) ───
   let mouseX = 0, mouseY = 0;
