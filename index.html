@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atlas AI es una agencia boutique de automatización e IA. Optimizamos flujos de trabajo con Make y n8n, creamos agentes inteligentes y desarrollo web.">
+  <meta name="keywords" content="Agencia de automatización IA, automatización de procesos empresariales, agentes de IA para empresas, desarrollo web premium, Make, n8n">
+  <meta name="author" content="Atlas AI">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://atlasai.agency/">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Atlas AI">
+  <meta property="og:title" content="Atlas AI | Agencia de Automatización e IA de Lujo">
+  <meta property="og:description" content="Diseñamos agentes de IA y flujos de trabajo con Make y n8n para eliminar tareas repetitivas y escalar tu negocio.">
+  <meta property="og:image" content="https://atlasai.agency/atlas-ai-logo.png">
+  <meta property="og:url" content="https://atlasai.agency/">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Atlas AI | Agencia de Automatización e IA de Lujo">
+  <meta name="twitter:description" content="Diseñamos agentes de IA y flujos de trabajo con Make y n8n para eliminar tareas repetitivas y escalar tu negocio.">
+  <meta name="twitter:image" content="https://atlasai.agency/atlas-ai-logo.png">
+  
+  <!-- Datos Estructurados Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Atlas AI",
+    "description": "Agencia boutique de automatización e inteligencia artificial. Diseñamos agentes de IA y flujos de trabajo con Make y n8n para escalar tu negocio.",
+    "image": "https://atlasai.agency/atlas-ai-logo.png",
+    "@id": "https://atlasai.agency/#organization",
+    "url": "https://atlasai.agency/",
+    "telephone": "+34682418263",
+    "email": "AtlasAiAgency@outlook.com",
+    "priceRange": "$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Málaga",
+      "addressRegion": "Andalucía",
+      "addressCountry": "ES"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "sameAs": [
+      "https://wa.me/34682418263"
+    ]
+  }
+  </script>
+  
+  <title>Atlas AI | Agencia de Automatización e IA de Lujo</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./atlas-ai-logo.png">
+  <link rel="apple-touch-icon" href="./atlas-ai-logo.png">
+
+  <!-- Preconexion a Fuentes de Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Estilos del Proyecto -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- ─── ELEMENTOS INTERACTIVOS DE FONDO ─── -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="cursor-aura" id="cursor-aura"></div>
+
+  <!-- ─── BARRA DE NAVEGACIÓN PRINCIPAL ─── -->
+  <nav id="main-nav">
+    <div class="container nav-container">
+      <a href="#" class="nav-logo">
+        <img src="./atlas-ai-logo.webp" alt="Logo de Atlas AI" width="38" height="38">
+        <span>ATLAS AI</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#valor">Valor</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      
+      <a href="#contacto" class="btn-primary">Solicitar Diagnóstico</a>
+      
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú de navegación">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Menú móvil de navegación -->
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <a href="#servicios" onclick="toggleMobileMenu()">Servicios</a>
+    <a href="#proceso" onclick="toggleMobileMenu()">Proceso</a>
+    <a href="#valor" onclick="toggleMobileMenu()">Valor</a>
+    <a href="#contacto" onclick="toggleMobileMenu()">Contacto</a>
+    <a href="#contacto" class="btn-primary" onclick="toggleMobileMenu()">Solicitar Diagnóstico</a>
+  </div>
+
+  <!-- ─── SECCIÓN HERO (LUJO & ALTURA CAPTURADA) ─── -->
+  <header class="hero">
+    <div class="hero-canvas-container">
+      <canvas id="hero-canvas"></canvas>
+    </div>
+    
+    <div class="container hero-content">
+      <div class="reveal">
+        <span class="hero-eyebrow">// DIAGNÓSTICO E INTELIGENCIA ARTIFICIAL</span>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <h1>Automatiza tus operaciones.<br><span class="text-gradient">Potencia tu crecimiento.</span></h1>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <p class="hero-subtext">Diseñamos agentes de IA y flujos de trabajo personalizados que eliminan tareas manuales repetitivas y escalan tu negocio de forma fluida.</p>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <div class="hero-actions">
+          <a href="#contacto" class="btn-primary">
+            Solicitar Diagnóstico
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#servicios" class="btn-secondary">Conocer Servicios</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── LOGO WALL (CONFIANZA BAJO EL HERO) ─── -->
+  <section class="logo-wall-section reveal">
+    <div class="container">
+      <div class="logo-wall-inner">
+        <p class="logo-wall-title">Sistemas integrados de forma segura con</p>
+        <div class="logo-grid">
+          <div class="logo-item" title="Make">
+            <img src="https://cdn.simpleicons.org/make/ffffff" alt="Logo de Make" width="24" height="24" loading="lazy">
+          </div>
+          <div class="logo-item" title="Google">
+            <img src="https://cdn.simpleicons.org/google/ffffff" alt="Logo de Google" width="24" height="24" loading="lazy">
+          </div>
+          <div class="logo-item" title="Notion">
+            <img src="https://cdn.simpleicons.org/notion/ffffff" alt="Logo de Notion" width="24" height="24" loading="lazy">
+          </div>
+          <div class="logo-item" title="n8n">
+            <img src="https://cdn.simpleicons.org/n8n/ffffff" alt="Logo de n8n" width="24" height="24" loading="lazy">
+          </div>
+          <div class="logo-item" title="Airtable">
+            <img src="https://cdn.simpleicons.org/airtable/ffffff" alt="Logo de Airtable" width="24" height="24" loading="lazy">
+          </div>
+          <div class="logo-item" title="Manychat">
+            <img src="https://cdn.simpleicons.org/manychat/ffffff" alt="Logo de Manychat" width="24" height="24" loading="lazy">
+          </div>
+          <div class="logo-item" title="Supabase">
+            <img src="https://cdn.simpleicons.org/supabase/ffffff" alt="Logo de Supabase" width="24" height="24" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estilos en línea específicos y aislados para el logo-wall para mantener modularidad y evitar sobrecarga global -->
+  <style>
+    .logo-wall-section {
+      padding: 48px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.02);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+      background: rgba(20, 20, 26, 0.2);
+    }
+    .logo-wall-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo-wall-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+    .logo-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+    .logo-item {
+      opacity: 0.45;
+      transition: var(--transition-fast);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-item:hover {
+      opacity: 0.95;
+      transform: scale(1.05);
+    }
+    .logo-item img {
+      height: 22px;
+      width: auto;
+    }
+    @media (max-width: 768px) {
+      .logo-grid {
+        gap: 32px;
+      }
+    }
+  </style>
+
+  <!-- ─── SECCIÓN SERVICIOS (BENTO REJILLA ASIMÉTRICA) ─── -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Ingeniería de vanguardia para<br><span class="text-gradient">escalar tus operaciones</span></h2>
+        <p>Convertimos cuellos de botella manuales en motores autónomos y eficientes para optimizar costes y tiempo.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Tarjeta 1 (Ancha) -->
+        <div class="bento-card glass-card reveal">
+          <div class="bento-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+            </svg>
+          </div>
+          <div class="bento-body">
+            <h3>Diagnóstico y Cuello de Botella</h3>
+            <p>Analizamos en profundidad tu flujo de operaciones diarias para detectar procesos lentos, cuellos de botella e ineficiencias operacionales mediante auditorías técnicas exhaustivas.</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2 (Estrecha) -->
+        <div class="bento-card glass-card reveal reveal-delay-1">
+          <div class="bento-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+          </div>
+          <div class="bento-body">
+            <h3>Automatización de Procesos</h3>
+            <p>Conectamos tus herramientas preferidas (como Make y n8n) para crear integraciones de datos seguras y flujos automáticos que trabajan de forma ininterrumpida por ti.</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3 (Estrecha) -->
+        <div class="bento-card glass-card reveal">
+          <div class="bento-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+            </svg>
+          </div>
+          <div class="bento-body">
+            <h3>Agentes de Inteligencia Artificial</h3>
+            <p>Diseñamos agentes autónomos de soporte al cliente, gestores automáticos de contenidos y asistentes especializados conectados directamente a tus bases de conocimiento privadas.</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 4 (Ancha) -->
+        <div class="bento-card glass-card reveal reveal-delay-1">
+          <div class="bento-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+            </svg>
+          </div>
+          <div class="bento-body">
+            <h3>Desarrollo Web de Alto Rendimiento</h3>
+            <p>Construimos interfaces a medida que cargan instantáneamente, con interacciones cinemáticas del más alto nivel y optimización técnica para captar más leads y conversiones.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECCIÓN PROCESO (INTERACTIVA DE 5 PASOS) ─── -->
+  <section class="section" id="proceso">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Una metodología precisa<br><span class="text-gradient">para resultados excepcionales</span></h2>
+        <p>Nuestro proceso estructurado garantiza que cada automatización esté alineada con tus objetivos comerciales.</p>
+      </div>
+
+      <div class="process-timeline">
+        <!-- Paso 1 -->
+        <div class="process-step glass-card reveal">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Auditoría</h3>
+            <p>Analizamos al milímetro tus procesos actuales para catalogar cada tarea repetitiva, ineficiencia y fricción que frena a tu equipo de trabajo.</p>
+          </div>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="process-step glass-card reveal">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Análisis</h3>
+            <p>Calculamos el retorno de la inversión estimado para cada proceso identificando qué flujos deben priorizarse para obtener el máximo impacto.</p>
+          </div>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="process-step glass-card reveal">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Diseño</h3>
+            <p>Diseñamos la arquitectura de automatización y la lógica de datos óptima para asegurar integraciones fluidas y sin caídas.</p>
+          </div>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="process-step glass-card reveal">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Integración</h3>
+            <p>Desarrollamos e implementamos los sistemas de forma segura, garantizando la continuidad operativa y entrenando a tu equipo técnico.</p>
+          </div>
+        </div>
+
+        <!-- Paso 5 -->
+        <div class="process-step glass-card reveal">
+          <div class="step-number">05</div>
+          <div class="step-content">
+            <h3>Optimización</h3>
+            <p>Monitorizamos activamente el rendimiento para realizar ajustes constantes y escalar los sistemas a medida que tu negocio crece.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECCIÓN VALOR Y DIFERENCIACIÓN (Métricas + Confianza) ─── -->
+  <section class="section" id="valor">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Diseño a medida que<br><span class="text-gradient">libera tu verdadero potencial</span></h2>
+        <p>No instalamos plantillas prediseñadas. Creamos soluciones operacionales robustas con altos estándares estéticos y técnicos.</p>
+      </div>
+
+      <div class="value-grid">
+        <!-- Tarjeta Valor 1 -->
+        <div class="value-card glass-card reveal">
+          <div class="value-metric">100%</div>
+          <h3>Enfoque de Lujo</h3>
+          <p>Cada línea de código y automatización se adapta exactamente a tus sistemas actuales para garantizar la máxima seguridad y robustez.</p>
+        </div>
+
+        <!-- Tarjeta Valor 2 -->
+        <div class="value-card glass-card reveal reveal-delay-1">
+          <div class="value-metric">+40h</div>
+          <h3>Tiempo Liberado</h3>
+          <p>Los negocios que automatizan con Atlas AI recuperan una media de 40 horas al mes por empleado para dedicarlas a tareas estratégicas.</p>
+        </div>
+
+        <!-- Tarjeta Valor 3 -->
+        <div class="value-card glass-card reveal reveal-delay-2">
+          <div class="value-metric">24/7</div>
+          <h3>Soporte Continuo</h3>
+          <p>Nuestras integraciones y agentes están monitorizados en tiempo real para reaccionar inmediatamente ante cualquier incidencia técnica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECCIÓN CONTACTO (FORMULARIO PREMIUM) ─── -->
+  <section class="section" id="contacto">
+    <div class="container contact-layout">
+      <!-- Info de contacto -->
+      <div class="contact-info reveal">
+        <h2>Inicia la evolución de<br><span class="text-gradient">tus operaciones.</span></h2>
+        <p>Reserva una sesión de diagnóstico gratuita de 30 minutos. Analizaremos tu modelo de operaciones y te entregaremos una propuesta personalizada sin ningún compromiso.</p>
+        
+        <div class="contact-channels">
+          <!-- WhatsApp -->
+          <a class="contact-channel" href="https://wa.me/34682418263?text=Hola%20Atlas%20AI%20me%20gustaria%20solicitar%20un%20diagnostico%20para%20mi%20negocio" target="_blank" rel="noopener">
+            <div class="channel-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a.75.75 0 0 1-1.074-.765 6.002 6.002 0 0 1 3.01-4.833C5.518 14.158 5 12 5 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
+              </svg>
+            </div>
+            <div class="channel-body">
+              <span class="channel-label">Conversa en WhatsApp</span>
+              <span class="channel-value">+34 682 41 82 63</span>
+            </div>
+          </a>
+
+          <!-- Email -->
+          <a class="contact-channel" href="mailto:AtlasAiAgency@outlook.com">
+            <div class="channel-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+              </svg>
+            </div>
+            <div class="channel-body">
+              <span class="channel-label">Canal Oficial de Correo</span>
+              <span class="channel-value">AtlasAiAgency@outlook.com</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="reveal reveal-delay-1">
+        <form class="contact-form glass-card" id="contact-form" onsubmit="submitForm(event)">
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="f-nombre">Nombre <span class="required">*</span></label>
+              <input class="form-input" type="text" id="f-nombre" required placeholder="Tu nombre">
+              <span class="form-error-msg" id="err-nombre">Este campo es obligatorio.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-cargo">Cargo <span class="required">*</span></label>
+              <input class="form-input" type="text" id="f-cargo" required placeholder="CEO, Director, etc.">
+              <span class="form-error-msg" id="err-cargo">Este campo es obligatorio.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="f-empresa">Empresa <span class="required">*</span></label>
+              <input class="form-input" type="text" id="f-empresa" required placeholder="Nombre de tu empresa">
+              <span class="form-error-msg" id="err-empresa">Este campo es obligatorio.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-email">Email <span class="required">*</span></label>
+              <input class="form-input" type="email" id="f-email" required placeholder="tu@empresa.com">
+              <span class="form-error-msg" id="err-email">Introduce un correo electrónico válido.</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-negocio">Tipo de Negocio <span class="required">*</span></label>
+            <input class="form-input" type="text" id="f-negocio" required placeholder="Ej: E-commerce, clínica dental, academia, consultoría...">
+            <span class="form-error-msg" id="err-negocio">Describe el tipo de negocio o sector.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-mensaje">Cuéntanos más <span class="required">*</span></label>
+            <textarea class="form-textarea" id="f-mensaje" rows="4" required placeholder="¿Qué procesos repetitivos o ineficiencias te gustaría automatizar en tu negocio?"></textarea>
+            <span class="form-error-msg" id="err-mensaje">Escribe una breve descripción del problema.</span>
+          </div>
+
+          <!-- Honeypot anti-spam -->
+          <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+            <label for="f-website">No rellenar</label>
+            <input type="text" id="f-website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-rgpd" onclick="document.getElementById('f-rgpd').click()">
+            <input type="checkbox" id="f-rgpd" required onclick="event.stopPropagation()">
+            <label for="f-rgpd">He leído y acepto la <a href="./privacidad.html" target="_blank" onclick="event.stopPropagation()">Política de Privacidad</a> y consiento el tratamiento de mis datos.</label>
+          </div>
+          <span class="form-error-msg" id="err-rgpd" style="margin-top:-24px;margin-bottom:16px;">Debes aceptar la política de privacidad.</span>
+
+          <button type="submit" class="btn-primary btn-submit" id="submit-btn">
+            Solicitar Diagnóstico
+          </button>
+
+          <div class="form-status" id="form-status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PIE DE PÁGINA (FOOTER COMPLETO) ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <div class="footer-logo">
+            <img src="./atlas-ai-logo.png" alt="Atlas AI" width="32" height="32">
+            <span>ATLAS AI</span>
+          </div>
+          <p class="footer-tagline">Agencia de automatización e inteligencia artificial premium enfocada en redefinir la eficiencia y rentabilidad empresarial.</p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Navegación</h4>
+            <a href="#servicios">Servicios</a>
+            <a href="#proceso">Proceso</a>
+            <a href="#valor">Valor</a>
+          </div>
+          <div class="footer-col">
+            <h4>Canales</h4>
+            <a href="mailto:AtlasAiAgency@outlook.com">AtlasAiAgency@outlook.com</a>
+            <a href="https://wa.me/34682418263" target="_blank" rel="noopener">WhatsApp Oficial</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Atlas AI. Todos los derechos reservados. Diseñado bajo estándares de lujo digital.</p>
+        <div class="footer-legal">
+          <a href="./privacidad.html" target="_blank">Privacidad</a>
+          <a href="./aviso-legal.html" target="_blank">Aviso Legal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lógica y Animaciones JavaScript -->
+  <script src="./script.js"></script>
+</body>
+</html>

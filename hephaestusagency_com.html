@@ -1,0 +1,3637 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Hephaestus Agency" />
+    <meta name="description" content="Soluciones IA especializadas para clínicas veterinarias y dentales. Contestamos a tus pacientes 24/7, agendamos citas y reducimos cancelaciones. Reunión gratuita + diagnóstico AIMA de regalo. Málaga, España." />
+    <title>
+      Hephaestus Agency — Soluciones IA para Clínicas Veterinarias y Dentales
+    </title>
+    <link rel="canonical" href="https://hephaestusagency.com/" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 32 32&#39;%3E%3Crect width=&#39;32&#39; height=&#39;32&#39; rx=&#39;4&#39; fill=&#39;%230A0A0F&#39;/%3E%3Ctext x=&#39;16&#39; y=&#39;22&#39; font-family=&#39;monospace&#39; font-size=&#39;18&#39; font-weight=&#39;700&#39; text-anchor=&#39;middle&#39; fill=&#39;%23C9A84C&#39;%3EH%3C/text%3E%3C/svg%3E" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:url" content="https://hephaestusagency.com/" />
+    <meta property="og:title" content="Hephaestus Agency — IA para Clínicas Veterinarias y Dentales" />
+    <meta property="og:description" content="Tu clínica no debería perder pacientes por no contestar a tiempo. Soluciones IA especializadas para clínicas veterinarias y dentales. Reunión gratuita." />
+    <meta property="og:image" content="https://hephaestusagency.com/og-image.png" />
+    <meta property="og:site_name" content="Hephaestus Agency" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hephaestus Agency — IA para Clínicas Veterinarias y Dentales" />
+    <meta name="twitter:description" content="Soluciones IA especializadas para clínicas. 24/7. Reunión gratuita." />
+    <meta name="twitter:image" content="https://hephaestusagency.com/og-image.png" />
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+      {
+    &#34;@context&#34;: &#34;https://schema.org&#34;,
+    &#34;@type&#34;: &#34;ProfessionalService&#34;,
+    &#34;name&#34;: &#34;Hephaestus Agency&#34;,
+    &#34;description&#34;: &#34;Soluciones IA especializadas para clínicas veterinarias y dentales. Atención 24/7, gestión de citas, reducción de cancelaciones. También soluciones a medida para otros sectores.&#34;,
+    &#34;url&#34;: &#34;https://hephaestusagency.com&#34;,
+    &#34;email&#34;: &#34;hola\u0040hephaestusagency.com&#34;,
+    &#34;telephone&#34;: &#34;+34694287303&#34;,
+    &#34;areaServed&#34;: {&#34;@type&#34;: &#34;Country&#34;, &#34;name&#34;: &#34;España&#34;},
+    &#34;address&#34;: {&#34;@type&#34;: &#34;PostalAddress&#34;, &#34;addressLocality&#34;: &#34;Málaga&#34;, &#34;addressCountry&#34;: &#34;ES&#34;},
+    &#34;sameAs&#34;: [&#34;https://www.linkedin.com/in/danielmenar/&#34;]
+  }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <style>
+      /* === CLAUDE DESIGN: variables de color y fuentes === */
+    :root {
+      --bg-base:       #0A0A0F;
+      --bg-surface:    #111118;
+      --bg-raised:     #16161F;
+      --gold:          #C9A84C;
+      --gold-light:    #E8C96B;
+      --gold-dim:      rgba(201,168,76,0.18);
+      --gold-dim2:     rgba(201,168,76,0.08);
+      --gold-glow:     rgba(201,168,76,0.12);
+      --blue:          #38BDF8;
+      --blue-dim:      rgba(56,189,248,0.18);
+      --blue-glow:     rgba(56,189,248,0.25);
+      --text-primary:  #F2F2F7;
+      --text-secondary:#B8B8CC;
+      --text-dim:      #A8A8C0;
+      --border:        rgba(201,168,76,0.18);
+      --border-hover:  rgba(201,168,76,0.45);
+      --border-subtle: rgba(232,232,240,0.09);
+      --error:         #E05A5A;
+      --success:       #5ABA8A;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: &#39;Inter&#39;, sans-serif;
+      background: var(--bg-base);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Grain texture overlay (DivisualProject-style) */
+    body::after {
+      content: &#39;&#39;;
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: url(&#34;data:image/svg+xml,%3Csvg viewBox=&#39;0 0 256 256&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39;%3E%3Cfilter id=&#39;n&#39;%3E%3CfeTurbulence type=&#39;fractalNoise&#39; baseFrequency=&#39;0.9&#39; numOctaves=&#39;4&#39; stitchTiles=&#39;stitch&#39;/%3E%3C/filter%3E%3Crect width=&#39;100%25&#39; height=&#39;100%25&#39; filter=&#39;url(%23n)&#39; opacity=&#39;1&#39;/%3E%3C/svg%3E&#34;);
+      background-size: 256px 256px;
+      opacity: 0.035;
+      mix-blend-mode: overlay;
+    }
+
+    /* === WOW: cursor aurora (gold radial follow) === */
+    .cursor-aura {
+      position: fixed;
+      top: 0; left: 0;
+      width: 520px; height: 520px;
+      pointer-events: none;
+      z-index: 99;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(201,168,76,0.10) 0%, rgba(201,168,76,0.04) 35%, transparent 70%);
+      mix-blend-mode: screen;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      will-change: transform;
+    }
+    .cursor-aura.active { opacity: 1; }
+    @media (max-width: 900px) { .cursor-aura { display: none; } }
+
+    /* All page content above the grain */
+    nav, section, footer, .modal-overlay { position: relative; z-index: 1; }
+
+    .mono { font-family: &#39;JetBrains Mono&#39;, monospace; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg-base); }
+    ::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.25); border-radius: 3px; }
+
+    /* ═══════════════ KEYFRAMES ═══════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes dash-move {
+      to { stroke-dashoffset: -8; }
+    }
+    @keyframes pulse-ring {
+      0%, 100% { r: 5; opacity: 0.6; }
+      50%       { r: 7; opacity: 1; }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position:  200% center; }
+    }
+    @keyframes badge-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.0); }
+      50%       { box-shadow: 0 0 12px 2px rgba(201,168,76,0.18); }
+    }
+
+    /* Accesibilidad: respetar preferencia de menos movimiento */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .cursor-aura { display: none !important; }
+      body::after { display: none; }
+    }
+
+    /* Reveal animation (IntersectionObserver target) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* Text gradient */
+    .text-gradient {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 30%, var(--blue) 70%, var(--gold) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
+
+    /* ═══════════════ LAYOUT ═══════════════ */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { width: 100%; }
+
+    .section-eyebrow {
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(1.625rem, 3.5vw, 2.5rem);
+      font-weight: 300; line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    /* ═══════════════ BUTTONS ═══════════════ */
+    /* === CLAUDE DESIGN: estilos de botones === */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold);
+      color: #0A0A0F;
+      font-family: &#39;Inter&#39;, sans-serif;
+      font-weight: 600; font-size: 0.875rem; letter-spacing: 0.02em;
+      padding: 13px 28px; border-radius: 3px; border: none;
+      cursor: pointer; text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(201,168,76,0.2);
+    }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent;
+      color: var(--gold);
+      font-family: &#39;Inter&#39;, sans-serif;
+      font-weight: 500; font-size: 0.875rem; letter-spacing: 0.02em;
+      padding: 12px 27px; border-radius: 3px;
+      border: 1px solid rgba(201,168,76,0.45);
+      cursor: pointer; text-decoration: none;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.06);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: transparent; color: var(--text-secondary);
+      font-size: 0.8125rem; font-weight: 400;
+      padding: 10px 0; border: none; cursor: pointer;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--text-primary); }
+
+    /* ═══════════════ NAV ═══════════════ */
+    /* === CLAUDE DESIGN: barra de navegación === */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      height: 64px;
+      display: flex; align-items: center;
+      transition: background 0.3s, border-color 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    nav.scrolled {
+      background: rgba(10,10,15,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom-color: var(--border-subtle);
+    }
+
+    .nav-inner {
+      width: 100%; max-width: 1200px; margin: 0 auto;
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; flex-shrink: 0;
+    }
+    .nav-logo img {
+      height: 34px; width: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .nav-logo-name {
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 0.875rem; font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-secondary);
+      font-size: 0.8125rem; font-weight: 400;
+      text-decoration: none; letter-spacing: 0.01em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 8px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--text-secondary);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .nav-mobile {
+      display: none;
+      position: fixed; top: 64px; left: 0; right: 0; z-index: 199;
+      background: rgba(10,10,15,0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 20px 24px 28px;
+      flex-direction: column; gap: 4px;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      color: var(--text-secondary);
+      font-size: 0.9375rem; text-decoration: none;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      transition: color 0.2s;
+    }
+    .nav-mobile a:hover { color: var(--text-primary); }
+    .nav-mobile a:last-child { border-bottom: none; }
+
+    /* ═══════════════ HERO ═══════════════ */
+    /* === CLAUDE DESIGN: sección hero con canvas y copy principal === */
+    .section-hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 100px 24px 80px;
+      position: relative; overflow: hidden;
+    }
+
+    #hero-canvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-content {
+      max-width: 1200px; margin: 0 auto; width: 100%;
+      position: relative; z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--blue);
+      background: var(--blue-dim);
+      border: 1px solid var(--blue-glow);
+      padding: 6px 14px; border-radius: 2px;
+      margin-bottom: 32px;
+      animation: badge-glow 3s ease-in-out infinite, fadeIn 0.8s ease forwards;
+    }
+    .hero-badge::before {
+      content: &#39;&#39;;
+      display: block; width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 6px var(--blue);
+    }
+
+    .hero-title {
+      font-size: clamp(2.25rem, 5.5vw, 4rem);
+      font-weight: 300; line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      max-width: 820px;
+      margin-bottom: 20px;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+
+    .hero-subheadline {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 400; line-height: 1.5;
+      margin-bottom: 20px;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+
+    .hero-description {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 540px;
+      margin-bottom: 44px;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    .hero-ctas {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.4s ease both;
+      margin-bottom: 72px;
+    }
+
+    /* ═══════════════ BG CANVAS ═══════════════ */
+    #bg-canvas {
+      position: fixed; inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 100;
+      mix-blend-mode: screen;
+    }
+
+    /* ═══════════════ PROBLEM ═══════════════ */
+    .section-problem {
+      padding: 100px 0 80px;
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 56px;
+    }
+
+    .pain-card {
+      background: var(--bg-base);
+      padding: 36px 32px;
+      border: none;
+      transition: background 0.25s, transform 0.25s;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .pain-card::before {
+      content: &#39;&#39;;
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+    .pain-card:hover { background: var(--bg-surface); }
+    .pain-card:hover::before { opacity: 0.55; }
+
+    .pain-icon {
+      width: 36px; height: 36px;
+      color: var(--gold);
+      margin-bottom: 20px;
+      opacity: 0.85;
+    }
+
+    .pain-card h3 {
+      font-size: 1rem; font-weight: 500;
+      margin-bottom: 12px; line-height: 1.4;
+    }
+
+    .pain-card p {
+      font-size: 0.8125rem; color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    .pain-card .pain-stat {
+      margin-top: auto;
+      padding-top: 20px;
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 1.5rem; font-weight: 600;
+      color: var(--gold-light);
+    }
+
+    .pain-card .pain-stat-label {
+      font-size: 0.6875rem; color: var(--text-secondary);
+      letter-spacing: 0.08em; margin-top: 2px;
+    }
+
+    /* ═══════════════ SERVICES ═══════════════ */
+    .section-services {
+      padding: 100px 0;
+      background: var(--bg-surface);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--border);
+      margin-top: 56px;
+    }
+
+    .featured-inner,
+    .featured-left,
+    .featured-right {
+      display: contents;
+    }
+
+    /* === CLAUDE DESIGN: cards de servicios === */
+    .service-card {
+      background: var(--bg-surface);
+      padding: 40px 36px;
+      position: relative;
+      transition: background 0.25s, border-color 0.25s, transform 0.25s;
+      border: 1px solid transparent;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .service-card:not(.featured)::before {
+      content: &#39;&#39;;
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+    .service-card:hover {
+      background: var(--bg-raised);
+      border-color: var(--border);
+    }
+    .service-card:hover::before { opacity: 0.55; }
+    .service-card .service-price { margin-top: auto; }
+    .service-card .btn-primary,
+    .service-card .btn-secondary {
+      margin-top: 0;
+      min-height: 48px;
+    }
+    .service-card.featured {
+      background: #0F0F1A;
+      border: 1px solid rgba(201,168,76,0.30);
+    }
+    .service-card.featured:hover {
+      border-color: rgba(201,168,76,0.55);
+      box-shadow: inset 0 0 40px rgba(201,168,76,0.03);
+    }
+
+    .service-badge {
+      display: inline-block;
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 0.5625rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 2px;
+      margin-bottom: 24px;
+    }
+    .service-badge.featured {
+      background: var(--gold);
+      color: #0A0A0F;
+    }
+    .service-badge.standard {
+      background: rgba(144,144,168,0.1);
+      color: var(--text-dim);
+      border: 1px solid var(--border-subtle);
+    }
+    .service-badge.launch {
+      background: rgba(201,168,76,0.12);
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.3);
+    }
+
+    .service-icon {
+      width: 32px; height: 32px;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.1875rem; font-weight: 500;
+      margin-bottom: 12px; line-height: 1.3;
+    }
+
+    .service-card p {
+      font-size: 0.8125rem; color: var(--text-secondary);
+      line-height: 1.75; margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .service-features {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+    .service-features-label {
+      font-size: 0.6875rem;
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .service-features li {
+      font-size: 0.8125rem; color: var(--text-secondary);
+      padding: 5px 0;
+      display: flex; align-items: flex-start; gap: 8px;
+      line-height: 1.5;
+    }
+    .service-features li::before {
+      content: &#39;›&#39;;
+      color: var(--gold);
+      font-weight: 600; flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .service-price {
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+
+    .service-price .price-main {
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 1.375rem; font-weight: 600;
+      color: var(--gold-light);
+    }
+    .service-price .price-original {
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 0.875rem; color: var(--text-dim);
+      text-decoration: line-through;
+      margin-left: 10px;
+    }
+    .service-price .price-sub {
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 0.6875rem; color: var(--text-dim);
+      margin-top: 4px; letter-spacing: 0.06em;
+    }
+    .service-price .price-custom {
+      font-size: 0.875rem; color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    /* ═══════════════ HOW IT WORKS ═══════════════ */
+    .section-process {
+      padding: 100px 0;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 64px;
+      position: relative;
+    }
+
+    .process-step {
+      padding: 0 32px 0 0;
+      position: relative;
+    }
+    .process-step:not(:last-child)::after {
+      content: &#39;&#39;;
+      position: absolute; top: 20px; right: 0;
+      width: 1px; height: 60px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      opacity: 0.3;
+    }
+    .process-step + .process-step {
+      padding: 0 32px 0 32px;
+    }
+    .process-step:last-child { padding-right: 0; }
+
+    .step-num {
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 0.625rem; color: var(--gold);
+      letter-spacing: 0.12em; margin-bottom: 16px;
+    }
+    .step-title {
+      font-size: 1.125rem; font-weight: 500;
+      margin-bottom: 12px; line-height: 1.3;
+    }
+    .step-desc {
+      font-size: 0.8125rem; color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* ═══════════════ FLOW DIAGRAM ═══════════════ */
+    .section-flow {
+      padding: 80px 0 100px;
+      background: var(--bg-surface);
+    }
+
+    .flow-diagram {
+      margin-top: 48px;
+      overflow-x: auto;
+    }
+
+    .flow-caption {
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 0.6875rem; color: var(--text-dim);
+      letter-spacing: 0.12em; text-align: center;
+      margin-top: 24px;
+      text-transform: uppercase;
+    }
+
+    /* ═══════════════ RESOURCES ═══════════════ */
+    /* === CLAUDE DESIGN: sección de recursos gratuitos === */
+    .section-resources {
+      padding: 100px 0;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 56px;
+    }
+
+    .resource-card {
+      background: var(--bg-base);
+      padding: 44px 40px;
+      display: flex; flex-direction: column;
+      transition: background 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .resource-card:hover { background: var(--bg-surface); }
+    .resource-card::before {
+      content: &#39;&#39;;
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .resource-card:hover::before { opacity: 1; }
+
+    .resource-header {
+      display: flex; align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    .resource-icon {
+      width: 44px; height: 44px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .resource-badge-tag {
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 0.5625rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 2px;
+    }
+    .resource-badge-tag.free {
+      background: rgba(201,168,76,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.25);
+    }
+    .resource-badge-tag.email {
+      background: rgba(144,144,168,0.08);
+      color: var(--text-dim);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .resource-card h3 {
+      font-size: 1.0625rem; font-weight: 500;
+      margin-bottom: 12px; line-height: 1.4;
+    }
+
+    .resource-card p {
+      font-size: 0.8125rem; color: var(--text-secondary);
+      line-height: 1.75; margin-bottom: 32px; flex: 1;
+    }
+
+    /* Email capture inline */
+    .email-capture {
+      display: none; flex-direction: column; gap: 10px;
+      margin-bottom: 16px;
+    }
+    .email-capture.open { display: flex; }
+    .email-capture input {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      font-family: &#39;Inter&#39;, sans-serif; font-size: 0.875rem;
+      padding: 11px 14px; border-radius: 3px;
+      outline: none; transition: border-color 0.2s;
+      width: 100%;
+    }
+    .email-capture input:focus { border-color: var(--gold); }
+    .email-capture input::placeholder { color: var(--text-dim); }
+
+    .resource-success {
+      display: none;
+      font-size: 0.8125rem; color: var(--success);
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      padding: 12px 0;
+      letter-spacing: 0.04em;
+    }
+    .resource-success.show { display: block; }
+
+    /* ═══════════════ FAQ ═══════════════ */
+    /* === CLAUDE DESIGN: acordeón FAQ === */
+    .section-faq {
+      padding: 100px 0;
+      background: var(--bg-surface);
+    }
+
+    .faq-list {
+      max-width: 760px;
+      margin-top: 56px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .faq-item { border-bottom: 1px solid var(--border-subtle); }
+
+    .faq-question {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; padding: 20px 0;
+      background: none; border: none;
+      color: var(--text-primary);
+      font-family: &#39;Inter&#39;, sans-serif;
+      font-size: 0.9375rem; font-weight: 400;
+      text-align: left; cursor: pointer;
+      gap: 16px;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--gold-light); }
+
+    .faq-icon {
+      width: 18px; height: 18px;
+      color: var(--gold); flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      font-size: 0.875rem; color: var(--text-secondary);
+      line-height: 1.8;
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      padding-bottom: 20px;
+    }
+
+    /* ═══════════════ CONTACT / CTA ═══════════════ */
+    /* === CLAUDE DESIGN: formulario de contacto y CTA final === */
+    .section-contact {
+      padding: 100px 0 120px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      margin-top: 56px;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 300; line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .contact-info p {
+      font-size: 0.9375rem; color: var(--text-secondary);
+      line-height: 1.75; margin-bottom: 40px;
+    }
+
+    .contact-channels {
+      display: flex; flex-direction: column; gap: 14px;
+    }
+
+    /* === Unified contact-channel: WhatsApp / Email / LinkedIn === */
+    .contact-channel {
+      display: flex; align-items: center; gap: 16px;
+      text-decoration: none; color: var(--text-primary);
+      padding: 18px 20px;
+      background: rgba(201,168,76,0.04);
+      border: 1px solid rgba(201,168,76,0.22);
+      border-radius: 4px;
+      transition: border-color 0.25s, background 0.25s, transform 0.2s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+      min-height: 76px;
+    }
+    .contact-channel::before {
+      content: &#39;&#39;;
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--gold);
+      transform: scaleY(0);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+    .contact-channel:hover {
+      border-color: rgba(201,168,76,0.55);
+      background: rgba(201,168,76,0.08);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201,168,76,0.10);
+    }
+    .contact-channel:hover::before { transform: scaleY(1); }
+
+    .contact-channel .ch-icon {
+      width: 44px; height: 44px;
+      border-radius: 6px;
+      background: rgba(201,168,76,0.10);
+      border: 1px solid rgba(201,168,76,0.30);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold);
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .contact-channel:hover .ch-icon {
+      background: rgba(201,168,76,0.18);
+      border-color: rgba(201,168,76,0.55);
+    }
+    .contact-channel .ch-icon svg { width: 22px; height: 22px; display: block; }
+
+    .contact-channel .ch-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+    .contact-channel .ch-label {
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 0.6875rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .contact-channel .ch-value {
+      font-family: &#39;Inter&#39;, sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      letter-spacing: 0;
+      line-height: 1.3;
+    }
+    .contact-channel .ch-value.mono {
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 0.9375rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* Form */
+    .contact-form {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 40px 36px;
+      border-radius: 4px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(201,168,76,0.03);
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 20px;
+    }
+
+    .form-field {
+      margin-bottom: 22px;
+    }
+
+    .form-label {
+      display: block;
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .form-label .required-star { color: var(--gold-light); margin-left: 3px; }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1.5px solid rgba(201,168,76,0.28);
+      color: var(--text-primary);
+      font-family: &#39;Inter&#39;, sans-serif; font-size: 1rem;
+      padding: 14px 16px; border-radius: 4px;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+      appearance: none;
+      line-height: 1.4;
+    }
+    .form-input:hover, .form-select:hover, .form-textarea:hover {
+      border-color: rgba(201,168,76,0.45);
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.07);
+      box-shadow: 0 0 0 4px rgba(201,168,76,0.18);
+    }
+    .form-input::placeholder, .form-textarea::placeholder {
+      color: rgba(184,184,204,0.55);
+      font-size: 0.9375rem;
+    }
+    .form-input.error, .form-select.error, .form-textarea.error {
+      border-color: var(--error);
+      box-shadow: 0 0 0 4px rgba(224,90,90,0.15);
+    }
+
+    .form-select {
+      background-image: url(&#34;data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;14&#39; height=&#39;9&#39; viewBox=&#39;0 0 12 8&#39;%3E%3Cpath d=&#39;M1 1l5 5 5-5&#39; stroke=&#39;%23C9A84C&#39; stroke-width=&#39;1.8&#39; fill=&#39;none&#39; stroke-linecap=&#39;round&#39;/%3E%3C/svg%3E&#34;);
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+      cursor: pointer;
+      color: var(--text-primary);
+    }
+    .form-select option { background: var(--bg-raised); color: var(--text-primary); }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 140px;
+      line-height: 1.6;
+    }
+
+    .form-error-msg {
+      display: none;
+      font-size: 0.8125rem; color: var(--error);
+      margin-top: 8px;
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+    }
+    .form-error-msg.show { display: block; }
+
+    .form-rgpd {
+      display: flex; align-items: flex-start; gap: 14px;
+      margin-bottom: 28px; cursor: pointer;
+      padding: 16px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      transition: border-color 0.2s;
+    }
+    .form-rgpd:hover { border-color: var(--border); }
+    .form-rgpd input[type=&#34;checkbox&#34;] {
+      width: 20px; height: 20px;
+      margin-top: 1px; flex-shrink: 0;
+      accent-color: var(--gold);
+      cursor: pointer;
+    }
+    .form-rgpd label {
+      font-size: 0.875rem; color: var(--text-secondary);
+      line-height: 1.6; cursor: pointer;
+    }
+    .form-rgpd label a {
+      color: var(--gold); text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(201,168,76,0.45);
+    }
+    .form-rgpd label a:hover { border-bottom-color: var(--gold); }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--gold);
+      color: #0A0A0F;
+      font-family: &#39;Inter&#39;, sans-serif;
+      font-weight: 700; font-size: 1rem; letter-spacing: 0.02em;
+      padding: 17px 28px; border-radius: 4px; border: none;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-submit::after {
+      content: &#39;&#39;;
+      position: absolute; top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.6s ease;
+    }
+    .btn-submit:hover::after { left: 100%; }
+    .btn-submit:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(201,168,76,0.35);
+    }
+    .btn-submit:disabled {
+      opacity: 0.7; cursor: not-allowed; transform: none;
+    }
+
+    .form-status {
+      display: none; margin-top: 16px;
+      padding: 14px 16px; border-radius: 3px;
+      font-size: 0.8125rem;
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      letter-spacing: 0.04em;
+    }
+    .form-status.success {
+      display: block;
+      background: rgba(90,186,138,0.1);
+      border: 1px solid rgba(90,186,138,0.3);
+      color: var(--success);
+    }
+    .form-status.error {
+      display: block;
+      background: rgba(224,90,90,0.08);
+      border: 1px solid rgba(224,90,90,0.25);
+      color: var(--error);
+    }
+
+    /* ═══════════════ FOOTER ═══════════════ */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 48px 24px;
+      background: var(--bg-base);
+    }
+
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 24px;
+    }
+
+    .footer-logo {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .footer-logo img { height: 34px; width: auto; }
+    .footer-logo-text {
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 0.875rem; font-weight: 600;
+      letter-spacing: 0.12em; color: var(--gold);
+    }
+
+    .footer-tagline {
+      font-size: 0.8125rem; color: var(--text-secondary); margin-top: 6px;
+    }
+
+    .footer-links {
+      display: flex; gap: 28px; align-items: center; flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 0.75rem; color: var(--text-secondary);
+      text-decoration: none; letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy {
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 0.75rem; color: var(--text-secondary);
+      letter-spacing: 0.05em;
+    }
+
+    /* ═══════════════ COOKIE BANNER ═══════════════ */
+    .cookie-banner {
+      position: fixed; bottom: 24px; left: 24px; right: 24px; z-index: 300;
+      max-width: 640px; margin: 0 auto;
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      padding: 20px 24px;
+      border-radius: 3px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.5s ease forwards;
+    }
+    .cookie-banner.hidden { display: none; }
+    .cookie-banner p {
+      font-size: 0.8125rem; color: var(--text-secondary);
+      line-height: 1.6; flex: 1; min-width: 200px;
+    }
+    .cookie-banner p a { color: var(--gold); text-decoration: none; }
+    .cookie-actions { display: flex; gap: 8px; flex-shrink: 0; }
+    .cookie-accept {
+      background: var(--gold); color: #0A0A0F;
+      border: none; border-radius: 3px;
+      font-size: 0.75rem; font-weight: 600; padding: 8px 16px;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .cookie-accept:hover { background: var(--gold-light); }
+    .cookie-decline {
+      background: transparent; color: var(--text-dim);
+      border: 1px solid var(--border-subtle); border-radius: 3px;
+      font-size: 0.75rem; padding: 8px 16px;
+      cursor: pointer; transition: border-color 0.2s, color 0.2s;
+    }
+    .cookie-decline:hover { border-color: var(--border); color: var(--text-secondary); }
+
+    /* ═══════════════ RESPONSIVE ═══════════════ */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-right .btn-secondary { display: none; }
+      .hamburger { display: flex; }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .pain-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; gap: 40px; }
+      .process-step { padding: 0 !important; }
+      .process-step::after { display: none; }
+      .resources-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .form-grid-2 { grid-template-columns: 1fr; }
+      .contact-form { padding: 28px 20px; }
+    }
+
+    @media (max-width: 600px) {
+      .section-hero { padding: 80px 20px 60px; }
+      .hero-title { font-size: 2rem; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn-primary,
+      .hero-ctas .btn-secondary { width: 100%; justify-content: center; }
+      .container { padding: 0 20px; }
+      .section-problem, .section-services, .section-process,
+      .section-flow, .section-resources, .section-faq,
+      .section-contact { padding: 72px 0; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .resource-card { padding: 32px 24px; }
+      .service-card { padding: 32px 24px; }
+    }
+    </style>
+    <link rel="stylesheet" href="assets/css/auditoria.css?v=1.0.1" />
+  </head>
+  <body>
+    <canvas id="bg-canvas">
+    </canvas>
+    <div class="cursor-aura" id="cursor-aura">
+    </div>
+    <!-- ═══════════════ NAVIGATION ═══════════════ -->
+    <nav id="main-nav">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo" id="nav-logo">        <img src="assets/Imagenes/Logo_NEGRO-DORADO.png" alt="Hephaestus Agency" id="nav-logo-img" width="42" height="42" onerror="this.style.display=&#39;none&#39;" />
+        <span class="nav-logo-name">        HEPHAESTUS
+</span>
+</a>
+        <ul class="nav-links">
+          <li>
+            <a href="#clinicas">            Clínicas
+</a>
+          </li>
+          <li>
+            <a href="#servicios">            Servicios
+</a>
+          </li>
+          <li>
+            <a href="#proceso">            Proceso
+</a>
+          </li>
+          <li>
+            <a href="#recursos">            Recursos
+</a>
+          </li>
+          <li>
+            <a href="#contacto">            Contacto
+</a>
+          </li>
+        </ul>
+        <div class="nav-right">
+          <a class="btn-secondary" href="#contacto" style="padding:8px 18px;font-size:0.75rem;">          Reunión gratuita
+</a>
+          <button class="hamburger" id="hamburger" aria-label="Menú" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="#clinicas" onclick="toggleMobileMenu()">      Clínicas
+</a>
+      <a href="#servicios" onclick="toggleMobileMenu()">      Servicios
+</a>
+      <a href="#proceso" onclick="toggleMobileMenu()">      Proceso
+</a>
+      <a href="#recursos" onclick="toggleMobileMenu()">      Recursos gratuitos
+</a>
+      <a href="#contacto" onclick="toggleMobileMenu()">      Contacto
+</a>
+      <a href="#contacto" onclick="toggleMobileMenu()" style="color:var(--gold);font-weight:500;">      Reunión gratuita →
+</a>
+    </div>
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <!-- === CLAUDE DESIGN: hero — copy principal, badge, CTAs === -->
+    <section class="section-hero" id="hero">
+      <canvas id="hero-canvas">
+      </canvas>
+      <div class="hero-content">
+        <div class="hero-badge">
+          IA Especializada + Arquitectura de Negocios · Daniel Mena
+        </div>
+        <h1 class="hero-title">
+          Tu clínica no debería perder pacientes
+          <br />
+          <span class="text-gradient">          por no contestar a tiempo.
+</span>
+        </h1>
+        <p class="hero-subheadline text-gradient">
+          Atención 24/7. Citas que no se cancelan. Urgencias que sí llegan.
+        </p>
+        <p class="hero-description">
+          Soy Daniel, Estratega Digital y Arquitecto de IA. Construyo sistemas inteligentes para clínicas que contestan a tus pacientes
+      a cualquier hora, agendan citas, recuerdan visitas y derivan urgencias reales a tu equipo.
+      No solo instalamos un bot, diseñamos una máquina operativa completa.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="#contacto">          Reunión gratuita
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m9 18 6-6-6-6">
+            </path>
+          </svg>
+</a>
+          <a class="btn-secondary" data-action="auditoria" href="#" style="border-color:rgba(201,168,76,0.4);">          AIMA de regalo · 3 min
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m9 18 6-6-6-6">
+            </path>
+          </svg>
+</a>
+          <a class="btn-secondary" href="https://wa.me/34694287303?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20las%20soluciones%20IA%20para%20mi%20cl%C3%ADnica." target="_blank" rel="noopener">          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z">
+            </path>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.534 5.856L.054 23.25a.75.75 0 0 0 .916.962l5.515-1.446A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.655-.51-5.17-1.399l-.36-.214-3.735.979.997-3.645-.235-.374A9.964 9.964 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z">
+            </path>
+          </svg>
+          WhatsApp
+</a>
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════ PROBLEM ═══════════════ -->
+    <!-- === CLAUDE DESIGN: sección de dolores/problemas del cliente === -->
+    <section class="section-problem" id="problema">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-eyebrow">
+            // Lo que te está costando dinero hoy
+          </p>
+          <h2 class="section-title">
+            No es la IA lo que te falta.
+            <br />
+            Es tiempo, atención y memoria.
+          </h2>
+          <p class="section-subtitle">
+            Una clínica pierde dinero por tres sitios que casi nadie mide: lo que no se contesta, lo que se cancela y lo que se olvida. Tres fugas que se reparan con sistemas, no con más esfuerzo.
+          </p>
+        </div>
+        <div class="pain-grid">
+          <div class="pain-card reveal reveal-delay-1">
+            <svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+              <circle cx="12" cy="12" r="10">
+              </circle>
+              <polyline points="12 6 12 12 16 14">
+              </polyline>
+            </svg>
+            <h3>
+              Lo que no se contesta
+            </h3>
+            <p>
+              Mensajes fuera de horario, llamadas perdidas, dudas en WhatsApp que tardan días. El paciente no espera: ya tiene cita en otro sitio antes de que tu equipo vuelva el lunes.
+            </p>
+            <div class="pain-stat">
+              30–60%
+            </div>
+            <div class="pain-stat-label">
+              DE CONTACTOS FUERA DE HORARIO QUE QUEDAN SIN ATENDER
+            </div>
+          </div>
+          <div class="pain-card reveal reveal-delay-2">
+            <svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2">
+              </path>
+              <circle cx="9" cy="7" r="4">
+              </circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87">
+              </path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75">
+              </path>
+            </svg>
+            <h3>
+              Lo que se cancela
+            </h3>
+            <p>
+              Citas que se olvidan, huecos vacíos en la agenda, sillón parado, quirófano sin uso. Una sola cancelación al día en una clínica media pasa de mil euros perdidos al mes — silenciosos.
+            </p>
+            <div class="pain-stat">
+              &gt;1.500€
+            </div>
+            <div class="pain-stat-label">
+              INGRESOS MEDIOS MENSUALES PERDIDOS POR NO-SHOWS
+            </div>
+          </div>
+          <div class="pain-card reveal reveal-delay-3">
+            <svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+              <line x1="12" y1="1" x2="12" y2="23">
+              </line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6">
+              </path>
+            </svg>
+            <h3>
+              Lo que se olvida
+            </h3>
+            <p>
+              Pacientes que no vuelven a vacunar, ortodoncias a medio terminar, tratamientos pendientes, presupuestos sin firmar. Cada uno es dinero que ya era tuyo y se va por no recordarlo a tiempo.
+            </p>
+            <div class="pain-stat">
+              8h/sem
+            </div>
+            <div class="pain-stat-label">
+              TIEMPO RECUPERABLE EN TU EQUIPO AL AUTOMATIZAR ESTOS RECORDATORIOS
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════ CLÍNICAS — DOS CARRILES ═══════════════ -->
+    <!-- === Foco principal: Veterinaria + Dental, lado a lado === -->
+    <section class="section-clinicas" id="clinicas" style="padding:96px 0; position:relative; overflow:hidden;">
+      <style>
+        .section-clinicas { background: linear-gradient(180deg, var(--bg-base) 0%, rgba(201,168,76,0.025) 50%, var(--bg-base) 100%); }
+    .clinicas-grid { display:grid; grid-template-columns: 1fr 1fr; gap:32px; margin-top:48px; }
+    .clinic-card {
+      position:relative;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 36px;
+      transition: border-color .25s ease, transform .25s ease;
+      display:flex; flex-direction:column; min-height: 520px;
+    }
+    .clinic-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+    .clinic-emoji { font-size: 48px; line-height:1; margin-bottom: 20px; }
+    .clinic-card h3 { font-size: 1.65rem; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em; }
+    .clinic-card .clinic-eyebrow { font-family:&#39;JetBrains Mono&#39;, monospace; font-size: 0.72rem; color: var(--gold); letter-spacing: 0.08em; text-transform:uppercase; margin-bottom: 10px; }
+    .clinic-pain {
+      background: rgba(224,90,90,0.06);
+      border-left: 3px solid var(--error);
+      padding: 16px 18px;
+      border-radius: 4px;
+      font-style: italic;
+      color: var(--text-secondary);
+      margin: 20px 0;
+      font-size: 0.95rem;
+    }
+    .clinic-solution { color: var(--text-primary); margin-bottom: 24px; font-size: 1rem; line-height: 1.65; }
+    .clinic-features { list-style:none; margin: 0 0 28px 0; padding:0; }
+    .clinic-features li {
+      position:relative;
+      padding-left: 26px;
+      margin-bottom: 10px;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+    .clinic-features li::before {
+      content: &#39;✓&#39;;
+      position:absolute; left:0; top:0;
+      color: var(--gold);
+      font-weight:600;
+    }
+    .clinic-ctas { margin-top:auto; display:flex; flex-direction:column; gap:10px; }
+    .clinic-other {
+      text-align:center;
+      margin-top: 40px;
+      padding: 24px;
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    .clinic-other a { color: var(--gold); text-decoration:none; font-weight:500; }
+    .clinic-other a:hover { text-decoration: underline; }
+    @media (max-width: 880px) {
+      .clinicas-grid { grid-template-columns: 1fr; gap: 20px; }
+      .clinic-card { padding: 32px 24px; min-height: auto; }
+    }
+      </style>
+      <div class="container">
+        <div class="reveal">
+          <p class="section-eyebrow">
+            // Nuestro foco
+          </p>
+          <h2 class="section-title">
+            No vendemos un recepcionista.
+            <br />
+            Diseñamos el sistema que tu clínica necesita.
+          </h2>
+          <p class="section-subtitle">
+            Cada clínica es distinta. Algunas pierden pacientes en la primera llamada, otras en la agenda, otras en el seguimiento. En la reunión gratuita escuchamos, diagnosticamos con AIMA y proponemos solo lo que mueve la aguja en tu caso.
+          </p>
+        </div>
+        <div class="clinicas-grid">
+          <!-- VETERINARIA -->
+          <div class="clinic-card reveal reveal-delay-1" data-clinic="veterinaria">
+            <div class="clinic-emoji">
+              🐾
+            </div>
+            <p class="clinic-eyebrow">
+              Clínicas veterinarias
+            </p>
+            <h3>
+              Aquí no se trata
+              <br />
+              de coger más llamadas.
+            </h3>
+            <div class="clinic-pain">
+              &#34;Cuando mi perro estaba mal el 31 de diciembre, llamé a las urgencias 24h. Nadie cogió el teléfono. No volvió a casa. Esta historia es la razón de Hephaestus.&#34;
+            </div>
+            <p class="clinic-solution">
+              Diseñamos el sistema completo de tu clínica para que ningún paciente quede sin atención y ninguna oportunidad se pierda. Escoge lo que necesitas, o lo definimos en la reunión.
+            </p>
+            <ul class="clinic-features">
+              <li>
+                <strong>                Atención 24/7
+</strong>
+                en WhatsApp, web y llamadas
+              </li>
+              <li>
+                <strong>                Triaje de urgencias
+</strong>
+                con tus protocolos clínicos
+              </li>
+              <li>
+                <strong>                Agenda + recordatorios
+</strong>
+                de vacunas, desparasitaciones, revisiones
+              </li>
+              <li>
+                <strong>                Seguimiento post-consulta
+</strong>
+                y reactivación de pacientes inactivos
+              </li>
+              <li>
+                <strong>                Captación de leads
+</strong>
+                desde Google, Instagram y referidos
+              </li>
+              <li>
+                <strong>                Facturación y recordatorios de pago
+</strong>
+                automáticos
+              </li>
+              <li>
+                <strong>                Integración
+</strong>
+                con tu software clínico (qvet, vetesia, etc.)
+              </li>
+            </ul>
+            <div class="clinic-ctas">
+              <a class="btn-primary" href="#contacto" data-prefill="veterinaria" style="justify-content:center;">              Reunión gratuita + AIMA de regalo
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m9 18 6-6-6-6">
+                </path>
+              </svg>
+</a>
+              <a class="btn-secondary" data-action="auditoria" data-clinic="veterinaria" href="#" style="justify-content:center;">              Diagnóstico AIMA en 3 min →
+</a>
+            </div>
+          </div>
+          <!-- DENTAL -->
+          <div class="clinic-card reveal reveal-delay-2" data-clinic="dental">
+            <div class="clinic-emoji">
+              🦷
+            </div>
+            <p class="clinic-eyebrow">
+              Clínicas dentales
+            </p>
+            <h3>
+              Aquí no se trata
+              <br />
+              de rellenar más agendas.
+            </h3>
+            <div class="clinic-pain">
+              &#34;Diez años de ortodoncia, bruxismo y sobremordida me enseñaron lo que vive un paciente real: la espera, la cancelación, el presupuesto que se olvida en un cajón. Hephaestus nace de ahí.&#34;
+            </div>
+            <p class="clinic-solution">
+              Diseñamos el sistema completo de tu clínica para que cada paciente que muestra interés acabe sentado en el sillón — y vuelva. Tú eliges qué piezas activamos primero.
+            </p>
+            <ul class="clinic-features">
+              <li>
+                <strong>                Primera visita
+</strong>
+                captada 24/7 desde web, WhatsApp y Google
+              </li>
+              <li>
+                <strong>                Recordatorios
+</strong>
+                que reducen las cancelaciones al mínimo
+              </li>
+              <li>
+                <strong>                Cualificación
+</strong>
+                de tratamientos de ticket alto (ortodoncia, implantes, estética)
+              </li>
+              <li>
+                <strong>                Seguimiento de presupuestos
+</strong>
+                sin firmar — pacientes que ya dijeron casi sí
+              </li>
+              <li>
+                <strong>                Reactivación
+</strong>
+                de pacientes inactivos &gt;6 meses
+              </li>
+              <li>
+                <strong>                Recordatorios de higienes
+</strong>
+                y revisiones periódicas
+              </li>
+              <li>
+                <strong>                Integración
+</strong>
+                con tu software clínico (Gesden, Klinikare, Dentalink…)
+              </li>
+            </ul>
+            <div class="clinic-ctas">
+              <a class="btn-primary" href="#contacto" data-prefill="dental" style="justify-content:center;">              Reunión gratuita + AIMA de regalo
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m9 18 6-6-6-6">
+                </path>
+              </svg>
+</a>
+              <a class="btn-secondary" data-action="auditoria" data-clinic="dental" href="#" style="justify-content:center;">              Diagnóstico AIMA en 3 min →
+</a>
+            </div>
+          </div>
+        </div>
+        <p class="clinic-other reveal">
+          ¿No tienes una clínica? Trabajamos con cualquier negocio que quiera automatizar lo que pierde dinero.
+          <a href="#servicios">          Ver soluciones a medida →
+</a>
+        </p>
+      </div>
+    </section>
+    <!-- ═══════════════ SERVICES ═══════════════ -->
+    <!-- === Dos tarjetas: Clínicas (foco) + Otros negocios + banner AIMA gratis === -->
+    <section class="section-services" id="servicios">
+      <style>
+        .services-2col { display:grid; grid-template-columns: 1fr 1fr; gap:28px; margin-top:48px; }
+    @media (max-width: 880px) { .services-2col { grid-template-columns: 1fr; } }
+    .service-card .service-tag {
+      display:inline-block;
+      background: var(--gold-dim2);
+      color: var(--gold-light);
+      border: 1px solid var(--gold-dim);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .aima-banner {
+      margin-top: 48px;
+      padding: 32px 36px;
+      background: linear-gradient(135deg, rgba(201,168,76,0.06), rgba(201,168,76,0.02));
+      border: 1px solid var(--gold-dim);
+      border-radius: 16px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 28px;
+      align-items: center;
+    }
+    .aima-banner .aima-icon {
+      width: 56px; height: 56px;
+      background: rgba(201,168,76,0.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+    }
+    .aima-banner h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 6px; }
+    .aima-banner h3 span.gift { color: var(--gold); }
+    .aima-banner p { color: var(--text-secondary); font-size: 0.95rem; margin: 0; }
+    .aima-banner .aima-price-cross {
+      color: var(--text-dim);
+      text-decoration: line-through;
+      font-size: 0.85rem;
+      margin-left: 6px;
+    }
+    @media (max-width: 720px) {
+      .aima-banner { grid-template-columns: 1fr; text-align:center; padding: 28px 24px; }
+      .aima-banner .aima-icon { margin: 0 auto; }
+    }
+      </style>
+      <div class="container">
+        <div class="reveal">
+          <p class="section-eyebrow">
+            // ¿No tienes una clínica?
+          </p>
+          <h2 class="section-title">
+            También trabajamos
+            <br />
+            con otros sectores.
+          </h2>
+          <p class="section-subtitle">
+            Si tu negocio no es una clínica pero pierde dinero por procesos manuales, por leads sin contestar o por sistemas desconectados — también te ayudamos. Mismo proceso, mismo cuidado, también a medida.
+          </p>
+        </div>
+        <div class="service-otros reveal" style="max-width:760px;margin:48px auto 0;">
+          <div class="service-card" style="text-align:left;">
+            <span class="service-tag" style="background: rgba(184,184,204,0.08); color: var(--text-secondary); border-color: var(--border-subtle);">            Otros sectores
+</span>
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+              <polyline points="16 3 21 3 21 8">
+              </polyline>
+              <line x1="4" y1="20" x2="21" y2="3">
+              </line>
+              <polyline points="21 16 21 21 16 21">
+              </polyline>
+              <line x1="15" y1="15" x2="21" y2="21">
+              </line>
+            </svg>
+            <h3>
+              Soluciones IA a medida
+              <br />
+              para tu negocio
+            </h3>
+            <p>
+              Academias, consultorías, inmobiliarias, e-commerce, despachos, restaurantes… El sector no nos asusta — partimos de tu situación real y diseñamos solo lo que mueve la aguja en tu caso.
+            </p>
+            <ul class="service-features">
+              <li>
+                Diagnóstico AIMA antes de cualquier propuesta
+              </li>
+              <li>
+                Diseño a medida según tu sector y procesos
+              </li>
+              <li>
+                Integración con +400 herramientas vía n8n
+              </li>
+              <li>
+                Captación, cualificación, automatización, reportes
+              </li>
+              <li>
+                Documentación y formación del equipo
+              </li>
+            </ul>
+            <div class="service-price">
+              <span class="price-custom">              Reunión gratuita + AIMA de regalo
+</span>
+              <div class="price-sub">
+                setup único + mantenimiento mensual · presupuesto a medida tras el diagnóstico
+              </div>
+            </div>
+            <a class="btn-primary" href="#contacto" data-prefill="otro" style="width:100%;justify-content:center;">            Cuéntanos tu caso
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m9 18 6-6-6-6">
+              </path>
+            </svg>
+</a>
+          </div>
+        </div>
+        <!-- AIMA BANNER (aplica a todos: clínicas y no clínicas) -->
+        <div class="aima-banner reveal">
+          <div class="aima-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="11" cy="11" r="8">
+              </circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65">
+              </line>
+            </svg>
+          </div>
+          <div>
+            <h3>
+              Diagnóstico AIMA —
+              <span class="gift">              de regalo con tu reunión
+</span>
+            </h3>
+            <p>
+              Sea cual sea tu sector: cuando reservas reunión gratuita, te entregamos el diagnóstico AIMA personalizado con todo lo hablado. Dónde estás perdiendo dinero, hoja de ruta priorizada y propuesta concreta. Valor real
+              <span class="aima-price-cross">              97€
+</span>
+              . Tu reunión = tu AIMA gratis.
+            </p>
+          </div>
+          <a class="btn-secondary" data-action="auditoria" href="#" style="white-space:nowrap;">          Solicitar AIMA →
+</a>
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════ AURA ═══════════════ -->
+    <section class="section-aura" id="aura" style="padding:100px 0; background: linear-gradient(180deg, var(--bg-base) 0%, rgba(248,248,255,0.02) 50%, var(--bg-base) 100%); overflow:hidden; position:relative;">
+      <style>
+        .section-aura::before {
+      content: &#39;&#39;;
+      position: absolute;
+      inset: 8% -10% auto auto;
+      width: 48vw;
+      height: 48vw;
+      max-width: 620px;
+      max-height: 620px;
+      background: radial-gradient(circle, rgba(59,130,246,0.16), transparent 62%);
+      pointer-events: none;
+    }
+    .section-aura::after {
+      content: &#39;&#39;;
+      position: absolute;
+      inset: auto auto 4% -12%;
+      width: 42vw;
+      height: 42vw;
+      max-width: 560px;
+      max-height: 560px;
+      background: radial-gradient(circle, rgba(201,168,76,0.12), transparent 64%);
+      pointer-events: none;
+    }
+    @keyframes aura-svg-pulse {
+      0%, 100% { filter: drop-shadow(0 0 14px rgba(59,130,246,0.22)) drop-shadow(0 0 6px rgba(255,255,255,0.12)); }
+      50%       { filter: drop-shadow(0 0 30px rgba(59,130,246,0.42)) drop-shadow(0 0 16px rgba(255,255,255,0.3)); }
+    }
+    @keyframes ag-ring-spin { to { transform: rotate(360deg); } }
+    @keyframes aura-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes aura-scan {
+      0% { transform: translateX(-120%); opacity: 0; }
+      18%, 60% { opacity: 0.35; }
+      100% { transform: translateX(120%); opacity: 0; }
+    }
+    .aura-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 420px;
+    }
+    .aura-video-frame {
+      position: relative;
+      width: min(100%, 640px);
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #050d1a;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 26px 80px rgba(0,0,0,0.48), 0 0 52px rgba(59,130,246,0.18), 0 0 28px rgba(201,168,76,0.12);
+      animation: aura-float 6s ease-in-out infinite;
+      z-index: 2;
+    }
+    .aura-video-frame::before {
+      content: &#39;&#39;;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 12%, rgba(255,255,255,0.12) 45%, transparent 58%);
+      mix-blend-mode: screen;
+      animation: aura-scan 5.6s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .aura-video-frame::after {
+      content: &#39;&#39;;
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 48% 44%, transparent 38%, rgba(3,8,15,0.34) 100%), linear-gradient(180deg, transparent 62%, rgba(3,8,15,0.52));
+      pointer-events: none;
+      z-index: 3;
+    }
+    .aura-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+    .aura-orbit-outer,
+    .aura-orbit-mid {
+      position: absolute;
+      inset: 26px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .aura-orbit-outer {
+      border: 0.7px dashed rgba(201,168,76,0.42);
+      animation: ag-ring-spin 18s linear infinite;
+    }
+    .aura-orbit-mid {
+      inset: 48px;
+      border: 0.5px solid rgba(59,130,246,0.35);
+      animation: ag-ring-spin 24s linear infinite reverse;
+    }
+    .aura-live-pill {
+      position: absolute;
+      left: 18px;
+      bottom: 16px;
+      z-index: 4;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font: 600 0.72rem/1 &#39;Inter&#39;, sans-serif;
+      color: rgba(255,255,255,0.9);
+      background: rgba(3,8,15,0.58);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+    }
+    .aura-live-pill::before {
+      content: &#39;&#39;;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #5ABA8A;
+      box-shadow: 0 0 12px rgba(90,186,138,0.75);
+    }
+    /* ── Aura layout ── */
+    .aura-layout {
+      display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.25fr); align-items: center; gap: 56px;
+      max-width: 1120px; margin: 0 auto; position: relative; z-index: 1;
+    }
+    .aura-content { flex: 1; }
+    .aura-name {
+      font-family: &#39;JetBrains Mono&#39;, monospace;
+      font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-bottom: 12px;
+    }
+    .aura-title {
+      font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15;
+      color: var(--text-primary); margin-bottom: 16px;
+    }
+    .aura-title span { color: #ffffff; text-shadow: 0 0 20px rgba(255,255,255,0.4); }
+    .aura-tagline {
+      font-size: 1rem; color: var(--text-secondary); margin-bottom: 28px; line-height: 1.7;
+    }
+    .aura-caps {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px;
+    }
+    .aura-cap {
+      font-size: 0.78rem; padding: 6px 14px; border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.15); color: var(--text-secondary);
+      background: rgba(255,255,255,0.04);
+    }
+    .btn-aura {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 8px; font-size: 0.9rem; font-weight: 600;
+      background: rgba(255,255,255,0.08); color: #fff;
+      border: 1px solid rgba(255,255,255,0.25);
+      text-decoration: none; cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .btn-aura:hover {
+      background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.5);
+      box-shadow: 0 0 24px rgba(255,255,255,0.12);
+    }
+    @media (max-width: 700px) {
+      .aura-layout { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+      .aura-visual { min-height: auto; order: -1; }
+      .aura-video-frame { width: 100%; }
+      .aura-orbit-outer, .aura-orbit-mid { display: none; }
+      .aura-caps { justify-content: center; }
+    }
+      </style>
+      <div class="container">
+        <div class="reveal">
+          <p class="section-eyebrow">
+            // Nuestro producto propio (próximamente)
+          </p>
+          <div class="aura-layout">
+            <!-- Aura en movimiento -->
+            <div class="aura-visual" aria-hidden="true">
+              <div class="aura-orbit-outer">
+              </div>
+              <div class="aura-orbit-mid">
+              </div>
+              <div class="aura-video-frame">
+                <video class="aura-video" autoplay="" muted="" loop="" playsinline="" preload="metadata" poster="assets/Imagenes/aura-motion-poster.webp">
+                  <source src="assets/Imagenes/aura-motion.mp4" type="video/mp4" />
+                </video>
+                <span class="aura-live-pill">                Próximamente
+</span>
+              </div>
+            </div>
+            <!-- Contenido -->
+            <div class="aura-content">
+              <p class="aura-name">
+                Producto propio · Hephaestus Agency
+              </p>
+              <h2 class="aura-title">
+                Conoce a
+                <span>                Aura
+</span>
+              </h2>
+              <p class="aura-tagline">
+                Aura es nuestro agente IA autónomo: un empleado digital que trabaja para ti 24/7,
+            con memoria propia y acceso a herramientas. Está en fase final de desarrollo.
+                <br />
+                <br />
+                <em style="opacity:0.85;">                Aura es independiente de las soluciones a medida que ofrecemos a clínicas y empresas.
+            Es un producto propio, con su lanzamiento, su comunidad y su precio.
+</em>
+              </p>
+              <div class="aura-caps">
+                <span class="aura-cap">                Agente autónomo
+</span>
+                <span class="aura-cap">                Memoria persistente
+</span>
+                <span class="aura-cap">                Comunidad Discord
+</span>
+                <span class="aura-cap">                Para emprendedores y autónomos
+</span>
+                <span class="aura-cap">                Lanzamiento Q3 2026
+</span>
+              </div>
+              <a class="btn-aura" href="/aura.html">              Conoce Aura y apúntate al lanzamiento
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m9 18 6-6-6-6">
+                </path>
+              </svg>
+</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════ HOW IT WORKS ═══════════════ -->
+    <!-- === CLAUDE DESIGN: pasos del proceso === -->
+    <section class="section-process" id="proceso">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-eyebrow">
+            // Cómo trabajamos
+          </p>
+          <h2 class="section-title">
+            De la primera reunión
+            <br />
+            a tu clínica funcionando sola.
+          </h2>
+          <p class="section-subtitle">
+            Cuatro pasos. Sin sorpresas. Sin compromisos hasta que veas el diagnóstico completo y sepas exactamente qué vas a pagar y por qué.
+          </p>
+        </div>
+        <div class="process-steps">
+          <div class="process-step reveal reveal-delay-1">
+            <p class="step-num">
+              01 —
+            </p>
+            <h3 class="step-title">
+              Reunión gratuita
+            </h3>
+            <p class="step-desc">
+              Nos cuentas tu clínica: cómo entran los pacientes, dónde se pierden, qué te quita el sueño. 30-45 minutos. Sin venta, sin presión. Solo escuchar y entender.
+            </p>
+          </div>
+          <div class="process-step reveal reveal-delay-2">
+            <p class="step-num">
+              02 —
+            </p>
+            <h3 class="step-title">
+              Diagnóstico AIMA
+            </h3>
+            <p class="step-desc">
+              Te entregamos el diagnóstico personalizado con todo lo hablado: dónde se está yendo el dinero, qué automatizar primero, qué ROI esperar y propuesta concreta. Te lo regalamos (valor 97€).
+            </p>
+          </div>
+          <div class="process-step reveal reveal-delay-3">
+            <p class="step-num">
+              03 —
+            </p>
+            <h3 class="step-title">
+              Implementación
+            </h3>
+            <p class="step-desc">
+              Si la propuesta encaja, construimos el sistema: agente IA configurado con tu protocolo, integraciones con tu software clínico, formación de tu equipo. Setup llave en mano.
+            </p>
+          </div>
+          <div class="process-step reveal">
+            <p class="step-num">
+              04 —
+            </p>
+            <h3 class="step-title">
+              Mantenimiento y mejora
+            </h3>
+            <p class="step-desc">
+              Cuota mensual fija. Nosotros monitorizamos, corregimos, mejoramos y añadimos lo que necesites. Tu equipo se dedica a los pacientes — del sistema nos encargamos nosotros.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════ FLOW DIAGRAM ═══════════════ -->
+    <section class="section-flow">
+      <div class="container">
+        <div class="reveal" style="text-align:center;">
+          <p class="section-eyebrow">
+            // En acción
+          </p>
+          <h2 class="section-title">
+            Así trabaja un paciente nuevo
+            <br />
+            en una clínica con Hephaestus.
+          </h2>
+        </div>
+        <div class="flow-diagram reveal">
+          <svg viewBox="0 0 960 180" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;min-width:600px;">
+            <defs>
+              <filter id="glow-f">
+                <feGaussianBlur stdDeviation="3.5" result="blur">
+                </feGaussianBlur>
+                <feComposite in="SourceGraphic" in2="blur" operator="over">
+                </feComposite>
+              </filter>
+              <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill="rgba(201,168,76,0.5)">
+                </path>
+              </marker>
+              <path id="fp1" d="M 155,90 L 215,90">
+              </path>
+              <path id="fp2" d="M 360,90 L 420,90">
+              </path>
+              <path id="fp3" d="M 565,90 L 625,90">
+              </path>
+              <path id="fp4" d="M 770,90 L 830,90">
+              </path>
+            </defs>
+            <!-- Connecting lines -->
+            <line x1="155" y1="90" x2="215" y2="90" stroke="rgba(201,168,76,0.2)" stroke-width="1" stroke-dasharray="4 3">
+              <animate attributeName="stroke-dashoffset" from="0" to="-7" dur="0.8s" repeatCount="indefinite">
+              </animate>
+            </line>
+            <line x1="360" y1="90" x2="420" y2="90" stroke="rgba(201,168,76,0.2)" stroke-width="1" stroke-dasharray="4 3">
+              <animate attributeName="stroke-dashoffset" from="0" to="-7" dur="0.8s" repeatCount="indefinite">
+              </animate>
+            </line>
+            <line x1="565" y1="90" x2="625" y2="90" stroke="rgba(201,168,76,0.2)" stroke-width="1" stroke-dasharray="4 3">
+              <animate attributeName="stroke-dashoffset" from="0" to="-7" dur="0.8s" repeatCount="indefinite">
+              </animate>
+            </line>
+            <line x1="770" y1="90" x2="830" y2="90" stroke="rgba(201,168,76,0.2)" stroke-width="1" stroke-dasharray="4 3">
+              <animate attributeName="stroke-dashoffset" from="0" to="-7" dur="0.8s" repeatCount="indefinite">
+              </animate>
+            </line>
+            <!-- Node 1: Paciente -->
+            <rect x="5" y="50" width="150" height="80" rx="2" fill="#111118" stroke="rgba(201,168,76,0.3)" stroke-width="1">
+            </rect>
+            <text x="80" y="78" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="#C9A84C" letter-spacing="2">
+              PACIENTE CONTACTA
+            </text>
+            <text x="80" y="98" text-anchor="middle" font-family="Inter" font-size="10.5" fill="#E8E8F0" font-weight="500">
+              WhatsApp / Web
+            </text>
+            <text x="80" y="114" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#9090A8">
+              A cualquier hora
+            </text>
+            <circle cx="80" cy="60" r="5" fill="#C9A84C" opacity="0.7">
+              <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite">
+              </animate>
+              <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite">
+              </animate>
+            </circle>
+            <!-- Node 2: IA -->
+            <rect x="215" y="50" width="145" height="80" rx="2" fill="#111118" stroke="rgba(201,168,76,0.55)" stroke-width="1.2">
+            </rect>
+            <text x="287" y="78" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="#C9A84C" letter-spacing="2">
+              AGENTE IA
+            </text>
+            <text x="287" y="98" text-anchor="middle" font-family="Inter" font-size="10.5" fill="#E8E8F0" font-weight="500">
+              Comprende
+            </text>
+            <text x="287" y="114" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#9090A8">
+              Clasifica intención
+            </text>
+            <circle cx="287" cy="60" r="5" fill="#E8C96B" opacity="0.9">
+              <animate attributeName="opacity" values="0.9;1;0.9" dur="1.4s" repeatCount="indefinite" begin="0.4s">
+              </animate>
+              <animate attributeName="r" values="4;7;4" dur="1.4s" repeatCount="indefinite" begin="0.4s">
+              </animate>
+            </circle>
+            <!-- Node 3: Triaje -->
+            <rect x="420" y="50" width="145" height="80" rx="2" fill="#111118" stroke="rgba(201,168,76,0.3)" stroke-width="1">
+            </rect>
+            <text x="492" y="78" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="#C9A84C" letter-spacing="2">
+              TRIAJE
+            </text>
+            <text x="492" y="98" text-anchor="middle" font-family="Inter" font-size="10.5" fill="#E8E8F0" font-weight="500">
+              Urgencia o cita
+            </text>
+            <text x="492" y="114" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#9090A8">
+              Según tu protocolo
+            </text>
+            <circle cx="492" cy="60" r="5" fill="#C9A84C" opacity="0.7">
+              <animate attributeName="opacity" values="0.7;1;0.7" dur="2.1s" repeatCount="indefinite" begin="0.9s">
+              </animate>
+              <animate attributeName="r" values="4;6;4" dur="2.1s" repeatCount="indefinite" begin="0.9s">
+              </animate>
+            </circle>
+            <!-- Node 4: Software clínico -->
+            <rect x="625" y="50" width="145" height="80" rx="2" fill="#111118" stroke="rgba(201,168,76,0.3)" stroke-width="1">
+            </rect>
+            <text x="697" y="78" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="#C9A84C" letter-spacing="2">
+              AGENDA
+            </text>
+            <text x="697" y="98" text-anchor="middle" font-family="Inter" font-size="10.5" fill="#E8E8F0" font-weight="500">
+              Tu software clínico
+            </text>
+            <text x="697" y="114" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#9090A8">
+              Cita registrada
+            </text>
+            <circle cx="697" cy="60" r="5" fill="#C9A84C" opacity="0.7">
+              <animate attributeName="opacity" values="0.7;1;0.7" dur="1.8s" repeatCount="indefinite" begin="1.4s">
+              </animate>
+            </circle>
+            <!-- Node 5: Recordatorios -->
+            <rect x="830" y="50" width="125" height="80" rx="2" fill="#111118" stroke="rgba(201,168,76,0.3)" stroke-width="1">
+            </rect>
+            <text x="892" y="78" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="#C9A84C" letter-spacing="2">
+              RECORDATORIOS
+            </text>
+            <text x="892" y="98" text-anchor="middle" font-family="Inter" font-size="10.5" fill="#E8E8F0" font-weight="500">
+              Cero no-shows
+            </text>
+            <text x="892" y="114" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#9090A8">
+              24h y 2h antes
+            </text>
+            <!-- Traveling dots -->
+            <circle r="4" fill="#E8C96B" filter="url(#glow-f)">
+              <animateMotion dur="4s" repeatCount="indefinite">
+                <mpath href="#fp1">
+                </mpath>
+              </animateMotion>
+            </circle>
+            <circle r="4" fill="#E8C96B" filter="url(#glow-f)">
+              <animateMotion dur="4s" begin="1s" repeatCount="indefinite">
+                <mpath href="#fp2">
+                </mpath>
+              </animateMotion>
+            </circle>
+            <circle r="4" fill="#E8C96B" filter="url(#glow-f)">
+              <animateMotion dur="4s" begin="2s" repeatCount="indefinite">
+                <mpath href="#fp3">
+                </mpath>
+              </animateMotion>
+            </circle>
+            <circle r="4" fill="#E8C96B" filter="url(#glow-f)">
+              <animateMotion dur="4s" begin="3s" repeatCount="indefinite">
+                <mpath href="#fp4">
+                </mpath>
+              </animateMotion>
+            </circle>
+          </svg>
+        </div>
+        <p class="flow-caption reveal">
+          Lead → IA → Cualificación → CRM → Equipo comercial
+        </p>
+      </div>
+    </section>
+    <!-- ═══════════════ RESOURCES ═══════════════ -->
+    <!-- === Lead magnet unificado: 2 herramientas tras gate de email === -->
+    <section class="section-resources" id="recursos">
+      <style>
+        .leadmagnet-card {
+      max-width: 920px;
+      margin: 48px auto 0;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 44px;
+      position: relative;
+      overflow: hidden;
+    }
+    .leadmagnet-card::before {
+      content: &#39;&#39;;
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(135deg, rgba(201,168,76,0.18), transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .leadmagnet-inner { position: relative; z-index: 1; }
+    .leadmagnet-title {
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 600;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .leadmagnet-sub {
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      font-size: 1rem;
+    }
+    .leadmagnet-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .leadmagnet-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .leadmagnet-item h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--gold-light);
+    }
+    .leadmagnet-item p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+    .leadmagnet-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .leadmagnet-form input,
+    .leadmagnet-form select {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: var(--text-primary);
+      font-family: &#39;Inter&#39;, sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .leadmagnet-form input:focus,
+    .leadmagnet-form select:focus { border-color: var(--gold); }
+    .leadmagnet-form select option { background: var(--bg-raised); color: var(--text-primary); }
+    .leadmagnet-sector-extra {
+      display: none;
+      margin-bottom: 12px;
+    }
+    .leadmagnet-sector-extra.show { display: block; }
+    .leadmagnet-sector-extra input {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: var(--text-primary);
+      font-family: &#39;Inter&#39;, sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .leadmagnet-submit-row {
+      display: flex; align-items: center; gap: 16px;
+      flex-wrap: wrap;
+    }
+    .leadmagnet-rgpd-note {
+      font-size: 0.78rem; color: var(--text-dim);
+      flex: 1; min-width: 200px;
+    }
+    #leadmagnet-success {
+      display: none;
+      padding: 24px;
+      background: rgba(90,186,138,0.08);
+      border: 1px solid rgba(90,186,138,0.3);
+      border-radius: 12px;
+      color: var(--success);
+      text-align: center;
+    }
+    #leadmagnet-success.show { display: block; }
+    #leadmagnet-success a {
+      display: inline-block; margin: 8px 8px 0;
+      color: var(--gold); text-decoration: none; font-weight: 500;
+    }
+    @media (max-width: 720px) {
+      .leadmagnet-card { padding: 32px 24px; }
+      .leadmagnet-items { grid-template-columns: 1fr; }
+      .leadmagnet-form { grid-template-columns: 1fr; }
+    }
+      </style>
+      <div class="container">
+        <div class="reveal">
+          <p class="section-eyebrow">
+            // Recursos gratuitos
+          </p>
+          <h2 class="section-title">
+            Dos herramientas. Un email.
+            <br />
+            Cero compromisos.
+          </h2>
+          <p class="section-subtitle">
+            Mapa de procesos manuales + Calculadora de ROI. Las recibes en tu correo en 1 minuto y puedes empezar a usarlas ya.
+          </p>
+        </div>
+        <div class="leadmagnet-card reveal">
+          <div class="leadmagnet-inner">
+            <div id="leadmagnet-form-wrap">
+              <h3 class="leadmagnet-title">
+                Descarga gratis las dos herramientas
+              </h3>
+              <p class="leadmagnet-sub">
+                Te enviamos los enlaces y una guía corta para que las uses bien — sin tener que pedirnos nada más.
+              </p>
+              <div class="leadmagnet-items">
+                <div class="leadmagnet-item">
+                  <h4>
+                    🗺️ Mapa de Procesos Manuales
+                  </h4>
+                  <p>
+                    Identifica y cuantifica en vivo los procesos que más tiempo te roban. Exportable en PDF.
+                  </p>
+                </div>
+                <div class="leadmagnet-item">
+                  <h4>
+                    📊 Calculadora de ROI
+                  </h4>
+                  <p>
+                    Descubre cuánto pierdes cada mes y cuánto recuperarías automatizando. Resultados en 3 minutos.
+                  </p>
+                </div>
+              </div>
+              <form id="leadmagnet-form" onsubmit="submitLeadMagnet(event)">
+                <div class="leadmagnet-form">
+                  <input type="email" id="lm-email" placeholder="tu@email.com" autocomplete="email" required="" />
+                  <select id="lm-tipo" required="" onchange="onLeadmagnetTypeChange(this)">
+                    <option value="" disabled="" selected="">
+                      ¿Qué tipo de negocio tienes?
+                    </option>
+                    <option value="veterinaria">
+                      🐾 Clínica veterinaria
+                    </option>
+                    <option value="dental">
+                      🦷 Clínica dental
+                    </option>
+                    <option value="otro">
+                      🏢 Otro sector
+                    </option>
+                  </select>
+                </div>
+                <div class="leadmagnet-sector-extra" id="lm-sector-wrap">
+                  <input type="text" id="lm-sector" placeholder="¿Qué sector? (academia, restaurante, e-commerce…)" />
+                </div>
+                <div class="leadmagnet-submit-row">
+                  <button type="submit" class="btn-primary">
+                    Enviar las herramientas a mi email
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="m9 18 6-6-6-6">
+                      </path>
+                    </svg>
+                  </button>
+                  <span class="leadmagnet-rgpd-note">                  Usaremos tu email solo para enviarte las herramientas y, si te parece bien, algún consejo ocasional. Sin spam.
+                  <a href="privacidad.html" style="color:var(--gold);">                  Política de privacidad
+</a>
+                  .
+</span>
+                </div>
+              </form>
+            </div>
+            <div id="leadmagnet-success">
+              <p>
+                ✓ Listo. Te hemos enviado los dos enlaces a tu correo.
+              </p>
+              <p style="margin-top:6px;color:var(--text-secondary);font-size:0.9rem;">
+                ¿Quieres empezar ya? También puedes abrirlas directamente:
+              </p>
+              <a href="recursos/mapa-procesos.html" target="_blank" rel="noopener">              Abrir Mapa de Procesos →
+</a>
+              <a href="recursos/calculadora-roi.html" target="_blank" rel="noopener">              Abrir Calculadora de ROI →
+</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════ FAQ ═══════════════ -->
+    <!-- === CLAUDE DESIGN: preguntas frecuentes === -->
+    <section class="section-faq" id="faq">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-eyebrow">
+            // Preguntas frecuentes — clínicas
+          </p>
+          <h2 class="section-title">
+            Lo que nos preguntan
+            <br />
+            antes de cerrar trato.
+          </h2>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              ¿Esto reemplaza a mi recepcionista?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="12" y1="5" x2="12" y2="19">
+                </line>
+                <line x1="5" y1="12" x2="19" y2="12">
+                </line>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              No. La amplifica. Tu recepcionista deja de gastar el día respondiendo preguntas repetitivas (precios, horarios, cómo llegar, qué traer) y se concentra en los pacientes que ya están dentro, en cobrar bien, en seguir tratamientos y en cuidar al cliente recurrente. La IA atiende fuera de horario, cuando hay picos y cuando nadie puede coger el teléfono. Es como tener una segunda recepcionista que no se cansa.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              ¿Qué pasa si la IA se equivoca con una urgencia real?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="12" y1="5" x2="12" y2="19">
+                </line>
+                <line x1="5" y1="12" x2="19" y2="12">
+                </line>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              La IA nunca diagnostica. Aplica un protocolo de triaje que
+              <strong>              tú defines contigo
+</strong>
+              : ante cualquier señal de riesgo (sangrado, dolor severo, dificultad respiratoria, traumatismo, fiebre alta…), deriva inmediatamente a teléfono humano o protocolo de urgencias. No improvisa. No interpreta más allá de lo que le decimos. Y todo queda registrado para que puedas revisarlo. Si dudas, escala — nunca al revés.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              ¿Es seguro con datos médicos? ¿Cumplís RGPD sanitario?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="12" y1="5" x2="12" y2="19">
+                </line>
+                <line x1="5" y1="12" x2="19" y2="12">
+                </line>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Sí. Los datos sanitarios son categoría especial bajo el RGPD y los tratamos como tal. Firmamos contrato de
+              <strong>              Encargo de Tratamiento
+</strong>
+              contigo desde el primer día. Servidores en la UE, cifrado en tránsito y en reposo, acceso restringido, registros de actividad, política de retención definida y derecho a portabilidad/borrado. La conversación con el paciente nunca incluye historial clínico — solo los datos mínimos para agendar, derivar o recordar. Si tu clínica ya tiene DPO, trabajamos directamente con él.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              ¿Cuánto cuesta? ¿Por qué no hay precio en la web?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="12" y1="5" x2="12" y2="19">
+                </line>
+                <line x1="5" y1="12" x2="19" y2="12">
+                </line>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Porque cada clínica es distinta. No es lo mismo una clínica veterinaria pequeña que un grupo de tres centros dentales con ortodoncia, implantología y estética. El precio se compone de tres partes:
+              <strong>              setup único
+</strong>
+              (el sistema diseñado para ti),
+              <strong>              cuota mensual fija
+</strong>
+              (mantenimiento, mejoras, soporte) y
+              <strong>              consumibles a tu nombre
+</strong>
+              (APIs, servidor — no inflamos margen aquí, los pagas tú directamente y nosotros te ayudamos a optimizarlos). En la reunión gratuita te damos números concretos para tu caso. Sin compromiso.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              ¿Cuánto tarda en estar funcionando?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="12" y1="5" x2="12" y2="19">
+                </line>
+                <line x1="5" y1="12" x2="19" y2="12">
+                </line>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Desde la firma, una solución de atención + agenda + recordatorios suele estar en producción en
+              <strong>              2-4 semanas
+</strong>
+              . Implementaciones más amplias (varios canales, integraciones con software clínico, reactivación, flujos de tratamientos) pueden llevar 4-8 semanas. Te damos un calendario por hitos antes de empezar, con responsables y entregables. Sin sorpresas.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              ¿Funciona con mi software clínico actual?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="12" y1="5" x2="12" y2="19">
+                </line>
+                <line x1="5" y1="12" x2="19" y2="12">
+                </line>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              La mayoría sí. Integramos vía API con los más comunes (Gesden, Klinikare, Dentalink, qvet, vetesia…). Para los que no tienen API abierta, podemos trabajar por
+              <strong>              Google Calendar
+</strong>
+              o por correo intermediario, o sobre la herramienta que ya tengas para gestionar agenda. Lo confirmamos en la reunión, viendo tu setup actual.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Y si mi clínica es pequeña, ¿merece la pena?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="12" y1="5" x2="12" y2="19">
+                </line>
+                <line x1="5" y1="12" x2="19" y2="12">
+                </line>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Te lo decimos honestamente en la reunión. Para una clínica que factura poco al mes y donde no hay fugas claras, no merece la pena — y te lo diremos. Para una clínica con 1-2 profesionales que pierde 2-3 pacientes al mes por no contestar, sí merece la pena casi siempre. El AIMA gratuito te lo deja por escrito antes de que decidas.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              ¿Y si me arrepiento? ¿Hay permanencia?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="12" y1="5" x2="12" y2="19">
+                </line>
+                <line x1="5" y1="12" x2="19" y2="12">
+                </line>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              El mantenimiento mensual es
+              <strong>              sin permanencia
+</strong>
+              : cancelas cuando quieras con un mes de aviso. El setup inicial sí es un compromiso (estamos construyendo algo a medida para ti), pero te damos garantía: si en los primeros 60 días el sistema no funciona como prometimos, lo arreglamos sin coste o te devolvemos la parte proporcional. No nos interesa que te quedes a la fuerza.
+            </div>
+          </div>
+        </div>
+        <!-- FAQ general para no-clínicas -->
+        <div class="reveal" style="margin-top:64px;">
+          <details style="background:rgba(255,255,255,0.02);border:1px solid var(--border-subtle);border-radius:12px;padding:0;">
+            <summary style="cursor:pointer;padding:20px 24px;font-weight:500;color:var(--text-secondary);font-size:0.95rem;list-style:none;">
+              ▸ ¿No tienes una clínica? Preguntas para otros sectores
+            </summary>
+            <div style="padding:0 24px 24px;color:var(--text-secondary);font-size:0.93rem;line-height:1.7;">
+              <p style="margin-bottom:12px;">
+                <strong style="color:var(--text-primary);">                ¿Trabajáis con cualquier sector?
+</strong>
+                <br />
+                Trabajamos con cualquier empresa con procesos repetitivos, gestión de leads o clientes. Tenemos casos en academias, consultorías, inmobiliarias y e-commerce. La metodología aplica — el conocimiento sectorial específico no.
+              </p>
+              <p style="margin-bottom:12px;">
+                <strong style="color:var(--text-primary);">                ¿Cuánto cuesta para mi caso?
+</strong>
+                <br />
+                Mismo modelo: setup único + cuota mensual + consumibles a tu nombre. En la reunión gratuita te damos números concretos tras entender tu situación.
+              </p>
+              <p style="margin-bottom:0;">
+                <strong style="color:var(--text-primary);">                ¿Por qué priorizáis clínicas si hacéis más?
+</strong>
+                <br />
+                Porque ahí tenemos experiencia directa y conocemos los protocolos. Eso nos permite entregar más rápido y con mejores resultados. Para otros sectores también trabajamos a medida — solo sin el atajo de plantillas probadas.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════ CONTACT ═══════════════ -->
+    <!-- === CLAUDE DESIGN: formulario de contacto y canales alternativos === -->
+    <section class="section-contact" id="contacto">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-eyebrow">
+            // Hablemos
+          </p>
+        </div>
+        <div class="contact-grid">
+          <!-- Info column -->
+          <div class="contact-info reveal">
+            <h2>
+              Hablemos de
+              <br />
+              <span class="text-gradient">              tu clínica.
+</span>
+            </h2>
+            <p>
+              Reserva una reunión gratuita de 30 minutos. Te escuchamos, te entregamos el AIMA personalizado como regalo y, si encaja, te proponemos algo concreto. Sin compromiso, sin presión. ¿No tienes una clínica? También te atendemos — solo selecciona &#34;otro tipo de negocio&#34;.
+            </p>
+            <div class="contact-channels">
+              <a class="contact-channel" href="https://wa.me/34694287303?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20sobre%20automatizaci%C3%B3n%20IA%20para%20mi%20negocio." target="_blank" rel="noopener">              <div class="ch-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z">
+                  </path>
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.534 5.856L.054 23.25a.75.75 0 0 0 .916.962l5.515-1.446A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.655-.51-5.17-1.399l-.36-.214-3.735.979.997-3.645-.235-.374A9.964 9.964 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z">
+                  </path>
+                </svg>
+              </div>
+              <div class="ch-body">
+                <span class="ch-label">                WhatsApp
+</span>
+                <span class="ch-value mono">                +34 694 287 303
+</span>
+              </div>
+</a>
+              <!--email_off-->
+              <a class="contact-channel" href="mailto:hola@hephaestusagency.com">              <div class="ch-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                  </path>
+                  <polyline points="22,6 12,13 2,6">
+                  </polyline>
+                </svg>
+              </div>
+              <div class="ch-body">
+                <span class="ch-label">                Email
+</span>
+                <span class="ch-value mono">                <!--email_off-->
+                hola@hephaestusagency.com
+                <!--/email_off-->
+</span>
+              </div>
+</a>
+              <!--/email_off-->
+              <a class="contact-channel" href="https://www.linkedin.com/in/danielmenar/" target="_blank" rel="noopener">              <div class="ch-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
+                  </path>
+                </svg>
+              </div>
+              <div class="ch-body">
+                <span class="ch-label">                LinkedIn
+</span>
+                <span class="ch-value">                Daniel Mena
+</span>
+              </div>
+</a>
+            </div>
+          </div>
+          <!-- Form column -->
+          <div class="reveal reveal-delay-1">
+            <form class="contact-form" id="contact-form" onsubmit="submitContactForm(event)">
+              <div class="form-grid-2">
+                <div class="form-field">
+                  <label class="form-label" for="f-nombre">
+                    Nombre
+                    <span class="required-star">                    *
+</span>
+                  </label>
+                  <input class="form-input" type="text" id="f-nombre" name="nombre" autocomplete="given-name" placeholder="Tu nombre" />
+                  <span class="form-error-msg" id="err-nombre">                  Campo obligatorio.
+</span>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="f-cargo">
+                    Cargo
+                    <span class="required-star">                    *
+</span>
+                  </label>
+                  <input class="form-input" type="text" id="f-cargo" name="cargo" placeholder="CEO, Director, Gerente..." />
+                  <span class="form-error-msg" id="err-cargo">                  Campo obligatorio.
+</span>
+                </div>
+              </div>
+              <div class="form-grid-2">
+                <div class="form-field">
+                  <label class="form-label" for="f-empresa">
+                    Empresa
+                    <span class="required-star">                    *
+</span>
+                  </label>
+                  <input class="form-input" type="text" id="f-empresa" name="empresa" autocomplete="organization" placeholder="Nombre de tu empresa" />
+                  <span class="form-error-msg" id="err-empresa">                  Campo obligatorio.
+</span>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="f-email">
+                    Email
+                    <span class="required-star">                    *
+</span>
+                  </label>
+                  <input class="form-input" type="email" id="f-email" name="email" autocomplete="email" placeholder="tu@empresa.com" />
+                  <span class="form-error-msg" id="err-email">                  Introduce un email válido.
+</span>
+                </div>
+              </div>
+              <div class="form-grid-2">
+                <div class="form-field">
+                  <label class="form-label" for="f-telefono">
+                    Teléfono
+                    <span style="color:var(--text-dim);font-weight:400;">                    (opcional)
+</span>
+                  </label>
+                  <input class="form-input" type="tel" id="f-telefono" name="telefono" autocomplete="tel" placeholder="+34 600 000 000" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="f-negocio">
+                    Tipo de negocio
+                    <span class="required-star">                    *
+</span>
+                  </label>
+                  <select class="form-select" id="f-negocio" name="tipo_negocio" onchange="onContactTypeChange(this)">
+                    <option value="" disabled="" selected="">
+                      Selecciona...
+                    </option>
+                    <option value="clinica_veterinaria">
+                      🐾 Clínica veterinaria
+                    </option>
+                    <option value="clinica_dental">
+                      🦷 Clínica dental
+                    </option>
+                    <option value="otro_negocio">
+                      🏢 Otro tipo de negocio
+                    </option>
+                    <option value="aura_waitlist">
+                      🔮 Estoy interesado en Aura (agente IA)
+                    </option>
+                  </select>
+                  <span class="form-error-msg" id="err-negocio">                  Selecciona una opción.
+</span>
+                </div>
+              </div>
+              <div class="form-field" id="contact-mensaje-hint" style="margin-top:-8px;margin-bottom:12px;display:none;">
+                <p style="font-size:0.85rem;color:var(--gold);font-style:italic;" id="contact-mensaje-hint-text">
+                </p>
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="f-mensaje">
+                  Cuéntanos más
+                  <span class="required-star">                  *
+</span>
+                </label>
+                <textarea class="form-textarea" id="f-mensaje" name="mensaje" rows="5" placeholder="¿Cómo entran los pacientes hoy? ¿Qué te quita el sueño? Cuanto más sepamos, mejor podremos ayudarte.">
+                </textarea>
+                <span class="form-error-msg" id="err-mensaje">                Cuéntanos algo, aunque sea breve.
+</span>
+              </div>
+              <!-- Honeypot anti-spam (no visible para humanos) -->
+              <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+                <label for="f-website">
+                  No rellenar
+                </label>
+                <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
+              <div class="form-rgpd">
+                <input type="checkbox" id="f-rgpd" name="rgpd" onchange="if(this.checked){document.getElementById(&#39;err-rgpd&#39;).classList.remove(&#39;show&#39;)}" />
+                <label for="f-rgpd">
+                  He leído y acepto la
+                  <a href="privacidad.html" target="_blank">                  Política de Privacidad
+</a>
+                  . Consiento el tratamiento de mis datos para atender mi consulta y mantener la relación comercial derivada.
+                  <span class="required-star" style="margin-left:3px;">                  *
+</span>
+                </label>
+              </div>
+              <span class="form-error-msg" id="err-rgpd" style="margin-top:-10px;margin-bottom:16px;">              Debes aceptar la política de privacidad.
+</span>
+              <button type="submit" class="btn-submit" id="submit-btn">
+                <span id="submit-text">                Enviar consulta
+</span>
+                <svg id="submit-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="m9 18 6-6-6-6">
+                  </path>
+                </svg>
+              </button>
+              <div class="form-status" id="form-status">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo">
+            <img src="assets/Imagenes/Logo_NEGRO-DORADO.png" alt="Hephaestus Agency" width="34" height="34" style="height:34px;width:auto;" onerror="this.style.display=&#39;none&#39;" />
+            <span class="footer-logo-text">            HEPHAESTUS
+</span>
+          </div>
+          <p class="footer-tagline">
+            IA especializada para clínicas veterinarias y dentales · Málaga, España
+          </p>
+          <p style="margin-top:10px;font-size:0.78rem;color:var(--text-dim);">
+            <a href="/aura.html" style="color:var(--text-dim);text-decoration:none;border-bottom:1px dashed var(--text-dim);">            Próximamente: Aura, nuestro agente IA →
+</a>
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="privacidad.html">          Privacidad
+</a>
+          <a href="aviso-legal.html">          Aviso legal
+</a>
+          <a href="https://www.linkedin.com/in/danielmenar/" target="_blank" rel="noopener">          LinkedIn
+</a>
+          <!--email_off-->
+          <a href="mailto:hola@hephaestusagency.com">          hola@hephaestusagency.com
+</a>
+          <!--/email_off-->
+        </div>
+        <p class="footer-copy">
+          © 2026 Hephaestus Agency · Málaga
+        </p>
+      </div>
+    </footer>
+    <!-- ═══════════════ COOKIE BANNER ═══════════════ -->
+    <div class="cookie-banner" id="cookie-banner">
+      <p>
+        Usamos cookies técnicas (necesarias) y analíticas opcionales. Lee nuestra
+        <a href="privacidad.html#cookies">        política de cookies
+</a>
+        .
+      </p>
+      <div class="cookie-actions">
+        <button class="cookie-decline" onclick="handleCookies(false)">
+          Solo necesarias
+        </button>
+        <button class="cookie-accept" onclick="handleCookies(true)">
+          Aceptar todo
+        </button>
+      </div>
+    </div>
+    <!-- ═══════════════ JAVASCRIPT ═══════════════ -->
+    <script>
+      /* Clean legacy hero hash from shared URLs */
+(function() {
+  if (window.location.hash === &#39;#hero&#39; &amp;&amp; window.history &amp;&amp; window.history.replaceState) {
+    window.history.replaceState(null, document.title, window.location.pathname + window.location.search);
+  }
+})();
+
+/* ─── Background canvas (full-page subtle particles) ─── */
+(function() {
+  const canvas = document.getElementById(&#39;bg-canvas&#39;);
+  const ctx = canvas.getContext(&#39;2d&#39;);
+  const GOLD = &#39;rgba(201,168,76,&#39;;
+  let W, H, particles = [];
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function BgParticle() {
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    this.vx = (Math.random() - 0.5) * 0.22;
+    this.vy = (Math.random() - 0.5) * 0.22;
+    this.r  = Math.random() * 1.4 + 0.5;
+    this.pulse = Math.random() * Math.PI * 2;
+    this.alpha = 0;
+    this.brightSeed = Math.random();
+  }
+
+  BgParticle.prototype.update = function() {
+    this.x += this.vx;
+    this.y += this.vy;
+    this.pulse += 0.01;
+    const base = 0.10 + this.brightSeed * 0.10;
+    this.alpha = base + Math.sin(this.pulse) * 0.06;
+    if (this.x &lt; 0) this.x = W;
+    if (this.x &gt; W) this.x = 0;
+    if (this.y &lt; 0) this.y = H;
+    if (this.y &gt; H) this.y = 0;
+  };
+
+  function init() {
+    resize();
+    particles = [];
+    const count = Math.min(95, Math.floor((W * H) / 13000));
+    for (let i = 0; i &lt; count; i++) particles.push(new BgParticle());
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    const len = particles.length;
+
+    for (let i = 0; i &lt; len; i++) {
+      for (let j = i + 1; j &lt; len; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist &lt; 130) {
+          ctx.beginPath();
+          ctx.strokeStyle = GOLD + (1 - dist / 130) * 0.10 + &#39;)&#39;;
+          ctx.lineWidth = 0.55;
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    for (let i = 0; i &lt; len; i++) {
+      const p = particles[i];
+      p.update();
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = GOLD + p.alpha + &#39;)&#39;;
+      ctx.fill();
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener(&#39;resize&#39;, function() { resize(); });
+  init();
+  draw();
+})();
+
+/* ─── Hero canvas particle animation (intensified + cursor reactive) ─── */
+(function() {
+  const canvas = document.getElementById(&#39;hero-canvas&#39;);
+  const ctx = canvas.getContext(&#39;2d&#39;);
+  const GOLD = &#39;rgba(201,168,76,&#39;;
+  const GOLD_BRIGHT = &#39;rgba(232,201,107,&#39;;
+  let W, H, particles = [];
+  const mouse = { x: -9999, y: -9999, active: false };
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function Particle() {
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    this.vx = (Math.random() - 0.5) * 0.55;
+    this.vy = (Math.random() - 0.5) * 0.55;
+    this.r  = Math.random() * 2.6 + 0.9;
+    this.alpha = Math.random() * 0.6 + 0.3;
+    this.pulse = Math.random() * Math.PI * 2;
+    this.glowing = Math.random() &lt; 0.22;
+  }
+
+  Particle.prototype.update = function() {
+    this.x += this.vx;
+    this.y += this.vy;
+    this.pulse += 0.028;
+    this.alpha = 0.35 + Math.sin(this.pulse) * 0.28;
+    if (this.x &lt; 0) this.x = W;
+    if (this.x &gt; W) this.x = 0;
+    if (this.y &lt; 0) this.y = H;
+    if (this.y &gt; H) this.y = 0;
+  };
+
+  function init() {
+    resize();
+    particles = [];
+    const count = Math.min(170, Math.floor((W * H) / 7500));
+    for (let i = 0; i &lt; count; i++) particles.push(new Particle());
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    const len = particles.length;
+
+    // particle-to-particle connections
+    for (let i = 0; i &lt; len; i++) {
+      for (let j = i + 1; j &lt; len; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist &lt; 155) {
+          const opacity = (1 - dist / 155) * 0.42;
+          ctx.beginPath();
+          ctx.strokeStyle = GOLD + opacity + &#39;)&#39;;
+          ctx.lineWidth = 0.9;
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // cursor-to-particle (WOW) constellation
+    if (mouse.active) {
+      for (let i = 0; i &lt; len; i++) {
+        const p = particles[i];
+        const dx = p.x - mouse.x;
+        const dy = p.y - mouse.y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist &lt; 200) {
+          const opacity = (1 - dist / 200) * 0.65;
+          ctx.beginPath();
+          ctx.strokeStyle = GOLD_BRIGHT + opacity + &#39;)&#39;;
+          ctx.lineWidth = 1.0;
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // particles
+    for (let i = 0; i &lt; len; i++) {
+      const p = particles[i];
+      p.update();
+      if (p.glowing) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r + 4, 0, Math.PI * 2);
+        ctx.fillStyle = GOLD + (p.alpha * 0.22) + &#39;)&#39;;
+        ctx.fill();
+      }
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = GOLD + p.alpha + &#39;)&#39;;
+      ctx.fill();
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  // Cursor reactivity
+  document.addEventListener(&#39;mousemove&#39;, function(e) {
+    const rect = canvas.getBoundingClientRect();
+    if (e.clientY &gt;= rect.top &amp;&amp; e.clientY &lt;= rect.bottom) {
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+      mouse.active = true;
+    } else {
+      mouse.active = false;
+    }
+  }, { passive: true });
+  document.addEventListener(&#39;mouseleave&#39;, function() { mouse.active = false; });
+
+  window.addEventListener(&#39;resize&#39;, () =&gt; { resize(); });
+  init();
+  draw();
+})();
+
+/* ─── Cursor aura (WOW: gold glow following pointer) ─── */
+(function() {
+  const aura = document.getElementById(&#39;cursor-aura&#39;);
+  if (!aura) return;
+  // Skip on touch devices and reduced-motion
+  if (window.matchMedia(&#39;(pointer: coarse)&#39;).matches) return;
+  if (window.matchMedia(&#39;(prefers-reduced-motion: reduce)&#39;).matches) return;
+
+  let targetX = 0, targetY = 0, curX = 0, curY = 0;
+  let active = false;
+  let pendingFrame = false;
+
+  document.addEventListener(&#39;mousemove&#39;, function(e) {
+    targetX = e.clientX;
+    targetY = e.clientY;
+    if (!active) {
+      active = true;
+      curX = targetX; curY = targetY;
+      aura.classList.add(&#39;active&#39;);
+    }
+  }, { passive: true });
+  document.addEventListener(&#39;mouseleave&#39;, function() {
+    active = false;
+    aura.classList.remove(&#39;active&#39;);
+  });
+
+  function loop() {
+    curX += (targetX - curX) * 0.12;
+    curY += (targetY - curY) * 0.12;
+    aura.style.transform = &#39;translate(&#39; + curX + &#39;px, &#39; + curY + &#39;px) translate(-50%, -50%)&#39;;
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+/* ─── Nav scroll effect ─── */
+const nav = document.getElementById(&#39;main-nav&#39;);
+window.addEventListener(&#39;scroll&#39;, function() {
+  if (window.scrollY &gt; 40) nav.classList.add(&#39;scrolled&#39;);
+  else nav.classList.remove(&#39;scrolled&#39;);
+}, { passive: true });
+
+/* ─── Mobile menu ─── */
+function toggleMobileMenu() {
+  document.getElementById(&#39;nav-mobile&#39;).classList.toggle(&#39;open&#39;);
+}
+
+/* ─── Intersection Observer (reveal animations) ─── */
+const revealObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add(&#39;visible&#39;);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(&#39;.reveal&#39;).forEach(function(el) {
+  revealObserver.observe(el);
+});
+
+/* ─── FAQ accordion ─── */
+function toggleFaq(btn) {
+  const item = btn.closest(&#39;.faq-item&#39;);
+  const isOpen = item.classList.contains(&#39;open&#39;);
+  document.querySelectorAll(&#39;.faq-item.open&#39;).forEach(function(el) { el.classList.remove(&#39;open&#39;); });
+  if (!isOpen) item.classList.add(&#39;open&#39;);
+}
+
+/* ─── Resource: ROI email capture ─── */
+function openRoiCapture() {
+  document.getElementById(&#39;roi-btn&#39;).style.display = &#39;none&#39;;
+  document.getElementById(&#39;email-capture-roi&#39;).classList.add(&#39;open&#39;);
+  document.getElementById(&#39;roi-email&#39;).focus();
+}
+
+function submitRoiEmail() {
+  const emailEl = document.getElementById(&#39;roi-email&#39;);
+  const errEl   = document.getElementById(&#39;roi-email-error&#39;);
+  const email   = emailEl.value.trim();
+  const emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+
+  if (!emailOk) {
+    emailEl.classList.add(&#39;error&#39;);
+    errEl.classList.add(&#39;show&#39;);
+    return;
+  }
+  emailEl.classList.remove(&#39;error&#39;);
+  errEl.classList.remove(&#39;show&#39;);
+
+  const resourceUrl = new URL(&#39;recursos/calculadora-roi.html&#39;, window.location.href).href;
+  const guideUrl = new URL(&#39;recursos/guia-de-uso.pdf&#39;, window.location.href).href;
+  const N8N = &#39;https://fabricahephaestus-n8n.mvuwmj.easypanel.host/webhook/hephaestus-aima&#39;;
+  fetch(N8N, {
+    method: &#39;POST&#39;,
+    headers: { &#39;Content-Type&#39;: &#39;application/json&#39; },
+    body: JSON.stringify({
+      tipo: &#39;recurso_roi&#39;,
+      email: email,
+      destinatario: email,
+      asunto: &#39;Tu Calculadora de ROI de Automatización&#39;,
+      recurso_nombre: &#39;Calculadora de ROI de Automatización&#39;,
+      recurso_url: resourceUrl,
+      guia_url: guideUrl,
+      mensaje: &#39;Gracias por solicitar la Calculadora de ROI de Automatización. Aquí tienes el enlace de acceso y la guía rápida de uso.&#39;,
+      timestamp: new Date().toISOString()
+    })
+  }).catch(function() {});
+
+  window.open(&#39;recursos/calculadora-roi.html&#39;, &#39;_blank&#39;);
+  document.getElementById(&#39;email-capture-roi&#39;).style.display = &#39;none&#39;;
+  document.getElementById(&#39;roi-success&#39;).classList.add(&#39;show&#39;);
+}
+
+/* ─── Contact form: type selector hints + prefill from CTAs ─── */
+function onContactTypeChange(sel) {
+  const hint = document.getElementById(&#39;contact-mensaje-hint&#39;);
+  const hintText = document.getElementById(&#39;contact-mensaje-hint-text&#39;);
+  const mensajeField = document.getElementById(&#39;f-mensaje&#39;);
+  const hints = {
+    &#39;clinica_veterinaria&#39;: &#39;Cuéntanos: ¿cuántos pacientes nuevos al mes? ¿Tienes urgencias 24h? ¿Qué software clínico usas?&#39;,
+    &#39;clinica_dental&#39;:      &#39;Cuéntanos: ¿qué tratamientos pesan más (ortodoncia, implantes, estética)? ¿Cuántas cancelaciones tienes al mes?&#39;,
+    &#39;otro_negocio&#39;:        &#39;Cuéntanos: ¿qué sector y qué proceso te roba más tiempo o dinero hoy?&#39;,
+    &#39;aura_waitlist&#39;:       &#39;¡Genial! Cuéntanos para qué quieres usar Aura. Te avisaremos cuando esté disponible.&#39;
+  };
+  if (sel.value &amp;&amp; hints[sel.value]) {
+    hint.style.display = &#39;block&#39;;
+    hintText.textContent = hints[sel.value];
+    if (sel.value === &#39;aura_waitlist&#39;) {
+      mensajeField.placeholder = &#39;¿Para qué tareas te imaginas usando Aura? ¿Eres autónomo, emprendedor, equipo pequeño?&#39;;
+    } else {
+      mensajeField.placeholder = &#39;¿Cómo entran los pacientes hoy? ¿Qué te quita el sueño? Cuanto más sepamos, mejor podremos ayudarte.&#39;;
+    }
+  } else {
+    hint.style.display = &#39;none&#39;;
+  }
+}
+
+(function setupCTAPrefill() {
+  document.addEventListener(&#39;click&#39;, function(e) {
+    const link = e.target.closest(&#39;a[data-prefill]&#39;);
+    if (!link) return;
+    const val = link.getAttribute(&#39;data-prefill&#39;);
+    const map = {
+      &#39;veterinaria&#39;: &#39;clinica_veterinaria&#39;,
+      &#39;dental&#39;:      &#39;clinica_dental&#39;,
+      &#39;clinica&#39;:     &#39;clinica_veterinaria&#39;,
+      &#39;otro&#39;:        &#39;otro_negocio&#39;,
+      &#39;aura&#39;:        &#39;aura_waitlist&#39;
+    };
+    const target = map[val];
+    if (!target) return;
+    setTimeout(function() {
+      const sel = document.getElementById(&#39;f-negocio&#39;);
+      if (sel) {
+        sel.value = target;
+        onContactTypeChange(sel);
+      }
+    }, 500);
+  });
+})();
+
+/* ─── Lead magnet (recursos) ─── */
+function onLeadmagnetTypeChange(sel) {
+  const wrap = document.getElementById(&#39;lm-sector-wrap&#39;);
+  if (sel.value === &#39;otro&#39;) wrap.classList.add(&#39;show&#39;);
+  else wrap.classList.remove(&#39;show&#39;);
+}
+
+function submitLeadMagnet(e) {
+  e.preventDefault();
+  const email = document.getElementById(&#39;lm-email&#39;).value.trim();
+  const tipo  = document.getElementById(&#39;lm-tipo&#39;).value;
+  const sector = (document.getElementById(&#39;lm-sector&#39;) || {value:&#39;&#39;}).value.trim();
+  const emailRx = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+  if (!emailRx.test(email) || !tipo) return;
+
+  const payload = {
+    tipo: &#39;lead_magnet&#39;,
+    email: email,
+    tipo_negocio: tipo,
+    sector_otro: sector,
+    recursos: [&#39;mapa-procesos&#39;, &#39;calculadora-roi&#39;],
+    origen: &#39;lead_magnet_recursos&#39;,
+    timestamp: new Date().toISOString()
+  };
+
+  const N8N = &#39;https://fabricahephaestus-n8n.mvuwmj.easypanel.host/webhook/hephaestus-aima&#39;;
+  fetch(N8N, {
+    method: &#39;POST&#39;,
+    headers: { &#39;Content-Type&#39;: &#39;application/json&#39; },
+    body: JSON.stringify(payload)
+  }).catch(function() {});
+
+  document.getElementById(&#39;leadmagnet-form-wrap&#39;).style.display = &#39;none&#39;;
+  document.getElementById(&#39;leadmagnet-success&#39;).classList.add(&#39;show&#39;);
+}
+
+/* ─── Contact form validation &amp; submit ─── */
+function validateField(id, errId, validator) {
+  const el  = document.getElementById(id);
+  const err = document.getElementById(errId);
+  const ok  = validator(el.value.trim());
+  el.classList.toggle(&#39;error&#39;, !ok);
+  err.classList.toggle(&#39;show&#39;, !ok);
+  return ok;
+}
+
+/* Helper: AbortSignal con timeout compatible (fallback si AbortSignal.timeout no existe) */
+function timeoutSignal(ms) {
+  try {
+    if (typeof AbortSignal !== &#39;undefined&#39; &amp;&amp; typeof AbortSignal.timeout === &#39;function&#39;) {
+      return AbortSignal.timeout(ms);
+    }
+  } catch (_) { /* noop */ }
+  if (typeof AbortController === &#39;undefined&#39;) return undefined;
+  const ctrl = new AbortController();
+  setTimeout(function() { ctrl.abort(); }, ms);
+  return ctrl.signal;
+}
+
+function submitContactForm(e) {
+  e.preventDefault();
+  // Honeypot: si el campo está relleno, salir silenciosamente
+  const honey = document.getElementById(&#39;f-website&#39;);
+  if (honey &amp;&amp; honey.value) { return; }
+  const emailRx = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+  const checks = [
+    validateField(&#39;f-nombre&#39;,      &#39;err-nombre&#39;,      v =&gt; v.length &gt; 0),
+    validateField(&#39;f-cargo&#39;,       &#39;err-cargo&#39;,       v =&gt; v.length &gt; 0),
+    validateField(&#39;f-empresa&#39;,     &#39;err-empresa&#39;,     v =&gt; v.length &gt; 0),
+    validateField(&#39;f-email&#39;,       &#39;err-email&#39;,       v =&gt; emailRx.test(v)),
+    validateField(&#39;f-negocio&#39;,     &#39;err-negocio&#39;,     v =&gt; v.length &gt; 0),
+    validateField(&#39;f-mensaje&#39;,     &#39;err-mensaje&#39;,     v =&gt; v.length &gt; 10),
+  ];
+
+  // RGPD
+  const rgpd    = document.getElementById(&#39;f-rgpd&#39;);
+  const errRgpd = document.getElementById(&#39;err-rgpd&#39;);
+  if (!rgpd.checked) {
+    errRgpd.classList.add(&#39;show&#39;);
+    checks.push(false);
+  } else {
+    errRgpd.classList.remove(&#39;show&#39;);
+  }
+
+  if (checks.includes(false)) {
+    document.querySelector(&#39;.form-input.error, .form-select.error, .form-textarea.error&#39;)
+      ?.scrollIntoView({ behavior: &#39;smooth&#39;, block: &#39;center&#39; });
+    return;
+  }
+
+  const btn  = document.getElementById(&#39;submit-btn&#39;);
+  const txt  = document.getElementById(&#39;submit-text&#39;);
+  const arr  = document.getElementById(&#39;submit-arrow&#39;);
+  const stat = document.getElementById(&#39;form-status&#39;);
+
+  btn.disabled = true;
+  txt.textContent = &#39;Enviando...&#39;;
+  arr.style.display = &#39;none&#39;;
+
+  const tipoNeg = document.getElementById(&#39;f-negocio&#39;).value.trim();
+  const payload = {
+    nombre:       document.getElementById(&#39;f-nombre&#39;).value.trim(),
+    cargo:        document.getElementById(&#39;f-cargo&#39;).value.trim(),
+    empresa:      document.getElementById(&#39;f-empresa&#39;).value.trim(),
+    email:        document.getElementById(&#39;f-email&#39;).value.trim(),
+    telefono:     document.getElementById(&#39;f-telefono&#39;).value.trim(),
+    tipo_negocio: tipoNeg,
+    mensaje:      document.getElementById(&#39;f-mensaje&#39;).value.trim(),
+    origen:       tipoNeg === &#39;aura_waitlist&#39; ? &#39;waitlist_aura&#39; : &#39;web_contacto&#39;,
+    timestamp:    new Date().toISOString()
+  };
+
+  const N8N = &#39;https://fabricahephaestus-n8n.mvuwmj.easypanel.host/webhook/hephaestus-aima&#39;;
+  const fallbackBody = Object.entries(payload)
+    .map(([k, v]) =&gt; encodeURIComponent(k) + &#39;: &#39; + encodeURIComponent(v))
+    .join(&#39;%0A&#39;);
+
+  fetch(N8N, {
+    method: &#39;POST&#39;,
+    headers: { &#39;Content-Type&#39;: &#39;application/json&#39; },
+    body: JSON.stringify(payload),
+    signal: timeoutSignal(8000)
+  })
+  .then(function(res) {
+    if (!res.ok) throw new Error(&#39;non-ok&#39;);
+    stat.className = &#39;form-status success&#39;;
+    stat.textContent = &#39;✓ Mensaje enviado. Te responderemos en menos de 24h.&#39;;
+    document.getElementById(&#39;contact-form&#39;).reset();
+  })
+  .catch(function() {
+    // Fallback to mailto
+    const subject = encodeURIComponent(&#39;Consulta Hephaestus — &#39; + payload.empresa);
+    const body    = encodeURIComponent(
+      &#39;Nombre: &#39; + payload.nombre + &#39;\nCargo: &#39; + payload.cargo +
+      &#39;\nEmpresa: &#39; + payload.empresa + &#39;\nEmail: &#39; + payload.email +
+      &#39;\nTeléfono: &#39; + (payload.telefono || &#39;—&#39;) +
+      &#39;\nTipo negocio: &#39; + payload.tipo_negocio +
+      &#39;\n\nMensaje:\n&#39; + payload.mensaje
+    );
+    stat.className = &#39;form-status error&#39;;
+    stat.innerHTML = &#39;No se pudo enviar automáticamente. &lt;a href=&#34;mailto:&#39; + &#39;hola&#39; + &#39;@&#39; + &#39;hephaestusagency.com&#39; + &#39;?subject=&#39; + subject + &#39;&amp;body=&#39; + body + &#39;&#34; style=&#34;color:var(--gold);&#34;&gt;Haz clic aquí para enviar por email&lt;/a&gt; o escríbenos por WhatsApp.&#39;;
+  })
+  .finally(function() {
+    btn.disabled = false;
+    txt.textContent = &#39;Enviar consulta&#39;;
+    arr.style.display = &#39;&#39;;
+  });
+}
+
+/* ─── Cookie banner ─── */
+(function() {
+  const key = &#39;ha_cookie_consent&#39;;
+  if (localStorage.getItem(key)) {
+    document.getElementById(&#39;cookie-banner&#39;).classList.add(&#39;hidden&#39;);
+  }
+})();
+
+function handleCookies(accept) {
+  localStorage.setItem(&#39;ha_cookie_consent&#39;, accept ? &#39;all&#39; : &#39;essential&#39;);
+  document.getElementById(&#39;cookie-banner&#39;).classList.add(&#39;hidden&#39;);
+}
+    </script>
+    <script src="assets/js/auditoria.js?v=1.0.1">
+    </script>
+    <!-- AURA CHAT WIDGET (DISABLED BY USER REQUEST) - START
+<style>
+  /* ── Aura Chat Widget ── */
+  #aura-widget { position: fixed; bottom: 28px; right: 28px; z-index: 9000; font-family: 'Inter', sans-serif; }
+
+  #aura-bubble {
+    width: 68px; height: 68px; border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    background: radial-gradient(circle, #0d1f45 0%, #03080f 100%);
+    box-shadow: 0 0 0 0 rgba(59,130,246,0.4), 0 4px 24px rgba(0,0,0,0.5), 0 0 20px rgba(201,168,76,0.15);
+    animation: bubble-breathe 3s ease-in-out infinite;
+    border: 1px solid rgba(201,168,76,0.38);
+    transition: transform 0.2s;
+  }
+  #aura-bubble:hover { transform: scale(1.08); }
+  #aura-bubble svg { filter: drop-shadow(0 0 6px rgba(201,168,76,0.65)); }
+  .aura-bubble-img {
+    width: 72%; height: 72%;
+    object-fit: contain; object-position: 50% 50%;
+    display: block; pointer-events: none; margin: 14% auto;
+  }
+  @keyframes bubble-breathe {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(59,130,246,0.4), 0 4px 24px rgba(0,0,0,0.5), 0 0 20px rgba(201,168,76,0.15); }
+    50%       { box-shadow: 0 0 0 10px rgba(59,130,246,0.1), 0 4px 24px rgba(0,0,0,0.5), 0 0 34px rgba(201,168,76,0.32); }
+  }
+
+  #aura-panel {
+    position: absolute; bottom: 72px; right: 0;
+    width: 340px; max-height: 520px;
+    background: #0E0E16; border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px; overflow: hidden; display: none; flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.04);
+  }
+  #aura-panel.open { display: flex; animation: panel-in 0.25s ease; }
+  @keyframes panel-in {
+    from { opacity: 0; transform: translateY(12px) scale(0.97); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .aura-panel-header {
+    padding: 16px 18px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+  }
+  .aura-panel-avatar-img {
+    width: 70%; height: 70%;
+    object-fit: contain; object-position: 50% 50%;
+    display: block; pointer-events: none; margin: 15% auto;
+  }
+  .aura-panel-avatar {
+    width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid rgba(201,168,76,0.3);
+    box-shadow: 0 0 12px rgba(59,130,246,0.3), 0 0 6px rgba(201,168,76,0.2);
+    animation: aura-svg-pulse 3s ease-in-out infinite;
+  }
+  .aura-panel-info { flex: 1; }
+  .aura-panel-name { font-size: 0.9rem; font-weight: 600; color: #fff; }
+  .aura-panel-status { font-size: 0.72rem; color: rgba(180,220,180,0.9); display: flex; align-items: center; gap: 5px; }
+  .aura-panel-status::before { content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #5ABA8A; }
+  #aura-panel-close { background: none; border: none; color: rgba(255,255,255,0.4); font-size: 1.2rem; cursor: pointer; padding: 4px; line-height: 1; }
+  #aura-panel-close:hover { color: #fff; }
+
+  #aura-messages {
+    flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px;
+    max-height: 340px; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.1) transparent;
+  }
+  .aura-msg {
+    max-width: 80%; padding: 10px 14px; border-radius: 12px; font-size: 0.84rem; line-height: 1.5;
+  }
+  .aura-msg.bot {
+    background: rgba(255,255,255,0.07); color: var(--text-primary, #F2F2F7); border-radius: 4px 12px 12px 12px;
+    align-self: flex-start;
+  }
+  .aura-msg.user {
+    background: rgba(255,255,255,0.12); color: #fff; border-radius: 12px 4px 12px 12px;
+    align-self: flex-end; text-align: right;
+  }
+  .aura-msg.typing { opacity: 0.6; font-style: italic; }
+
+  .aura-panel-input-row {
+    padding: 12px 14px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; gap: 8px;
+  }
+  #aura-input {
+    flex: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px; padding: 9px 12px; color: #fff; font-size: 0.83rem; outline: none;
+    font-family: 'Inter', sans-serif;
+  }
+  #aura-input::placeholder { color: rgba(255,255,255,0.3); }
+  #aura-input:focus { border-color: rgba(255,255,255,0.3); }
+  #aura-send {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 8px; padding: 9px 13px; color: #fff; cursor: pointer;
+    transition: background 0.2s;
+  }
+  #aura-send:hover { background: rgba(255,255,255,0.2); }
+
+  @media (max-width: 480px) {
+    #aura-widget { bottom: 16px; right: 16px; }
+    #aura-panel { width: calc(100vw - 32px); right: 0; }
+  }
+</style>
+
+<div id="aura-widget">
+  <div id="aura-panel" role="dialog" aria-label="Chat con Hefe">
+    <div class="aura-panel-header">
+      <div class="aura-panel-avatar" aria-hidden="true">
+        <img src="assets/Imagenes/Logo_NEGRO-DORADO.png" class="aura-panel-avatar-img" alt="Hefe">
+      </div>
+      <div class="aura-panel-info">
+        <div class="aura-panel-name">Hefe</div>
+        <div class="aura-panel-status">Director de operaciones · en línea</div>
+      </div>
+      <button id="aura-panel-close" aria-label="Cerrar chat">×</button>
+    </div>
+    <div id="aura-messages">
+      <div class="aura-msg bot">Hola, soy Hefe 👋 Director de operaciones de Hephaestus. ¿Tienes una clínica o quieres saber cómo te podemos ayudar? Cuéntame.</div>
+    </div>
+    <div class="aura-panel-input-row">
+      <input id="aura-input" type="text" placeholder="Escribe tu mensaje..." autocomplete="off" maxlength="500">
+      <button id="aura-send" aria-label="Enviar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="aura-bubble" role="button" aria-label="Abrir chat con Hefe" tabindex="0">
+    <img src="assets/Imagenes/Logo_NEGRO-DORADO.png" class="aura-bubble-img" alt="Hefe">
+  </div>
+</div>
+
+<script>
+(function () {
+  const N8N_AURA = 'https://fabricahephaestus-n8n.mvuwmj.easypanel.host/webhook/hephaestus-aura-chat';
+  const WA_FALLBACK = 'https://wa.me/34694287303?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20alguien%20del%20equipo%20de%20Hephaestus.';
+
+  let sessionId = sessionStorage.getItem('hephaestus_chat_session');
+  if (!sessionId) {
+    sessionId = 'web-' + Math.random().toString(36).substring(2, 15) + '-' + Date.now().toString(36);
+    sessionStorage.setItem('hephaestus_chat_session', sessionId);
+  }
+
+  const panel = document.getElementById('aura-panel');
+  const bubble = document.getElementById('aura-bubble');
+  const closeBtn = document.getElementById('aura-panel-close');
+  const input = document.getElementById('aura-input');
+  const sendBtn = document.getElementById('aura-send');
+  const messages = document.getElementById('aura-messages');
+  const sectionTrigger = document.getElementById('aura-chat-trigger');
+
+  function openPanel() {
+    panel.classList.add('open');
+    input.focus();
+  }
+  function closePanel() { panel.classList.remove('open'); }
+
+  bubble.addEventListener('click', openPanel);
+  bubble.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openPanel(); });
+  closeBtn.addEventListener('click', closePanel);
+  if (sectionTrigger) sectionTrigger.addEventListener('click', openPanel);
+
+  function addMsg(text, role) {
+    const div = document.createElement('div');
+    div.className = 'aura-msg ' + role;
+    div.textContent = text;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+    return div;
+  }
+
+  function showTyping() {
+    const d = addMsg('Hefe está escribiendo...', 'bot typing');
+    return d;
+  }
+
+  async function sendMessage() {
+    const text = input.value.trim();
+    if (!text) return;
+    addMsg(text, 'user');
+    input.value = '';
+    const typing = showTyping();
+
+    try {
+      const res = await Promise.race([
+        fetch(N8N_AURA, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: text, sessionId: sessionId, source: 'web-widget', timestamp: new Date().toISOString() })
+        }),
+        new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 15000))
+      ]);
+
+      typing.remove();
+
+      if (res.ok) {
+        const data = await res.json().catch(() => null);
+        const reply = data?.reply || data?.message || data?.output || '¡Mensaje recibido! En breve te contactamos.';
+        addMsg(reply, 'bot');
+      } else {
+        throw new Error('bad response');
+      }
+    } catch {
+      typing.remove();
+      addMsg('Parece que hay un problema de conexión. Te redirigimos a WhatsApp para que un asesor te atienda ahora.', 'bot');
+      setTimeout(() => window.open(WA_FALLBACK, '_blank'), 1500);
+    }
+  }
+
+  sendBtn.addEventListener('click', sendMessage);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); } });
+})();
+</script>
+AURA CHAT WIDGET (DISABLED BY USER REQUEST) - END -->
+  </body>
+</html>
